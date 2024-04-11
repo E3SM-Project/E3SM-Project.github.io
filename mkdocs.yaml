@@ -46,6 +46,8 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - md_in_html
+  - admonition
+  - pymdownx.details
 
 extra_javascript:
   - javascript/mathjax.js

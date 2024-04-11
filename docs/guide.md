@@ -71,8 +71,8 @@ Create a new run script or copy an existing one (such as the template above). Th
 - `readonly CASE_NAME="your_casename"`: case name
 - `# readonly CASE_GROUP=""`: This will let you mark multiple cases as part of the same group for later processing (e.g., with PACE).
 
-> [!IMPORTANT]
-> If this is part of a simulation campaign, ask your group lead about using a `CASE_GROUP` label. Otherwise, please use a unique name to distinguish from existing `CASE_GROUP` label names, (e.g., “v2.LR“).
+!!! warning
+    If this is part of a simulation campaign, ask your group lead about using a `CASE_GROUP` label. Otherwise, please use a unique name to distinguish from existing `CASE_GROUP` label names, (e.g., “v2.LR“).
 
 `# Code and compilation`
 
@@ -80,11 +80,11 @@ Create a new run script or copy an existing one (such as the template above). Th
 - `readonly BRANCH="master"`: branch the code was checked out from. Valid options include “master”, a branch name, or a git hash. For provenance purposes, it is best to specify the git hash.
 - `readonly DEBUG_COMPILE=false`: option to compile with DEBUG flag (leave set to false)
 
-> [!IMPORTANT]
-> BEFORE RUNNING: Change `CHECKOUT` to a date string like 20240301.
+!!! warning
+    BEFORE RUNNING: Change `CHECKOUT` to a date string like 20240301.
 
-> [!IMPORTANT]
-> A case is tied to one code base and one executable. That is, if you change `CHECKOUT` or `BRANCH`, then you should also change `CASE_NAME`.
+!!! warning
+    A case is tied to one code base and one executable. That is, if you change `CHECKOUT` or `BRANCH`, then you should also change `CASE_NAME`.
 
 `# Run options`
 
@@ -180,8 +180,8 @@ cd <run_scripts_dir>
 
 Since we are bypassing the code fetch and compilation (by re-using the previous executable), the script should only take a few seconds to run and submit the second test.
 
-> [!TIP]
-> The short tests use separate output directories, so it is safe to submit and run multiple tests at once. If you’d like, you could submit additional test, for example 10 days with the medium 80 nodes ('M80') layout (`M80_1x10_ndays`).
+!!! tip
+    The short tests use separate output directories, so it is safe to submit and run multiple tests at once. If you’d like, you could submit additional test, for example 10 days with the medium 80 nodes ('M80') layout (`M80_1x10_ndays`).
 
 #### Verrifying Results are BFB
 
@@ -253,8 +253,8 @@ Run `tail -f run/<component>.log.<latest log file>` to keep up with a log in rea
 
 You can use the `sq` alias defined in the “Useful Aliases” section to check on the status of the job. The `NODE` in the output indicates the number of nodes used and is dependent on the `processor_config` / `PELAYOUT` size.  
 
-> [!NOTE]
-> When running on two different machines (such as Compy and Chrysalis) and/or two different compilers, the answers will not be the same, bit-for-bit. It is not possible using floating point operations to get bit-or-bit identical results across machines/compilers.
+!!! note
+    When running on two different machines (such as Compy and Chrysalis) and/or two different compilers, the answers will not be the same, bit-for-bit. It is not possible using floating point operations to get bit-or-bit identical results across machines/compilers.
 
 Logs being compressed to `.gz` files is one of the last steps before the job is done and will indicate successful completion of the segment. `less <log>.gz` will let you directly look at a gzipped log.
 
@@ -262,8 +262,8 @@ Logs being compressed to `.gz` files is one of the last steps before the job is 
 
 By default, E3SM will store all output files under the `<simulations_dir>/<case_name>/run/` directory. For long simulations, there could 10,000s to 100,000s of output files. Having so many files in a single directory can be very impractical, slowing down simple operations like `ls` to a crawl. CIME includes a short-term archiving utility that will neatly organize output files into a separate `<simulations_dir>/<case_name>/archive/` directory. Short term archiving can be accomplished with the following steps.
 
-> [!TIP]
-> This can be done while the model is still running.
+!!! tip
+    This can be done while the model is still running.
 
 Use `--force-move` to move instead of copying, which can take a long time. Set `--last-date` to the latest date in the simulation you want to archive. You do not have to specify a beginning date.
 
@@ -324,8 +324,8 @@ Before re-submitting:
 
 To post-process a model run, do the following steps.
 
-> [!IMPORTANT]
-> To post-process up to year *n*, then you must have short-term archived up to year *n*.
+!!! warning
+    To post-process up to year *n*, then you must have short-term archived up to year *n*.
 
 You can ask questions about `zppy` on the [zppy discussion board](https://github.com/E3SM-Project/zppy/discussions/categories/questions).
 
@@ -333,8 +333,8 @@ You can ask questions about `zppy` on the [zppy discussion board](https://github
 
 Load the E3SM Unified environment.
 
-> [!TIP]
-> The E3SM Unified environment activation commands can be found on [zppy's Getting started page](https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html). Alternatively, they can be found using [Mache](https://github.com/E3SM-Project/mache/tree/main/mache/machines): click the relevant machine and find the `base_path` listed under `[e3sm_unified]` -- the activation command will be `source <base_path>/load_latest_e3sm_unified_<machine_name>.sh`.
+!!! tip
+    The E3SM Unified environment activation commands can be found on [zppy's Getting started page](https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html). Alternatively, they can be found using [Mache](https://github.com/E3SM-Project/mache/tree/main/mache/machines): click the relevant machine and find the `base_path` listed under `[e3sm_unified]` -- the activation command will be `source <base_path>/load_latest_e3sm_unified_<machine_name>.sh`.
 
 If you need a feature in `zppy` that has not yet been included in the E3SM Unified environment, you can construct a [development environment](https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html#b-development-environment).
 
@@ -342,8 +342,8 @@ If you need a feature in `zppy` that has not yet been included in the E3SM Unifi
 
 In `<run_scripts_dir>`, create a new post-processing configuration file, or copy an existing one, and call it `post.<case_name>.cfg`.
 
-> [!TIP]
-> Good example configuration files can be found in the `zppy` [integration test directory](https://github.com/E3SM-Project/zppy/tree/main/tests/integration/generated) -- `test_complete_run_<machine_name>.cfg
+!!! tip
+    Good example configuration files can be found in the `zppy` [integration test directory](https://github.com/E3SM-Project/zppy/tree/main/tests/integration/generated) -- `test_complete_run_<machine_name>.cfg
 
 Edit the file and customize as needed. The file is structured with `[section]` and `[[sub-sections]]`. There is a `[default]` section, followed by additional sections for each available zppy task (`climo`, `ts`, `e3sm_diags`, `mpas_analysis`, …). Sub-sections can be used to have multiple instances of a particular task, for example having both regridded monthly and globally averaged time series files. Refer to the `zppy` [schematics documentation](https://e3sm-project.github.io/zppy/_build/html/main/schematics.html) for more details.
 
@@ -353,8 +353,8 @@ The key sections of the configuration file are:
 
 - `input`, `output`, `www` paths will likely need to be edited.
 
-> [!NOTE]
-> The output of your simulation (`<simulations_dir>/<case_name>`) is the *input* to `zppy`. You can use the same directory for `zppy` output as well, since `zppy` will generate output under `<output>/post`
+!!! note
+    The output of your simulation (`<simulations_dir>/<case_name>`) is the *input* to `zppy`. You can use the same directory for `zppy` output as well, since `zppy` will generate output under `<output>/post`
 
 `[climo]`
 
@@ -388,8 +388,8 @@ climatology plots averaged over years 21-50, ENSO plots for years 11 to 50, and 
 
 - `climo_years` and `ts_years` should match their equivalents in the `[mpas_analysis]` section.
 
-> [!TIP]
-> See the `zppy` [parameters documentation](https://e3sm-project.github.io/zppy/_build/html/main/parameters.html) for more information on parameters.
+!!! tip
+    See the `zppy` [parameters documentation](https://e3sm-project.github.io/zppy/_build/html/main/parameters.html) for more information on parameters.
 
 ### Launch zppy
 
@@ -418,6 +418,7 @@ If you run `ls <simulations_dir>/<case_name>/post/scripts` you’ll see files li
 | `180x360_aave` | Grid |
 | `model_vs_obs` | `model_vs_model` or `model_vs_obs` |
 | `0001-0020` | First and last years |
+
 There is also a corresponding output file. It will have the same name but end with `.o<job ID>` instead of `.status`.
 
 ### Output
@@ -497,38 +498,38 @@ The SYPD (simulated years per day) is listed in PACE’s “Experiment Details�
 In the “Notes” section of the table, mention if a job failed or if you changed anything before re-running a job.
 
 ### Global Time Series
->
-> [!NOTE]
-> The plots will be available online at the URL corresponding to `<www>/global_time_series/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
+
+!!! note
+    The plots will be available online at the URL corresponding to `<www>/global_time_series/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
 
 You can download the images and then upload them to your Confluence page.
 
 ### E3SM Diags
->
-> [!NOTE]
-> The plots will be available online at the URL corresponding to `<www>/e3sm_diags/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
+
+!!! note
+    The plots will be available online at the URL corresponding to `<www>/e3sm_diags/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
 
 Replace the baseline diagnostics in the template's table with relevant ones (e.g., diags on v3 `piControl` and another relevant `v3` run). Add your own diagnostics links in the last columns, labeling them as `<start_year>-<end_year>`.
 
 ### MPAS Analysis
 
-> [!NOTE]
-> The plots will be available online at the URL corresponding to `<www>/mpas_analysis/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
+!!! note
+    The plots will be available online at the URL corresponding to `<www>/mpas_analysis/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
 
 Make a bulleted list of links, e.g., for `<url_path>/ts_0001-0050_climo_0021-0050/`, create a bullet `“1-50 (time series), 21-50 (climatology)”.
 
 ### ILAMB
 <!-- TODO: Add this section? -->
 
-> [!NOTE]
-> The plots will be available online at the URL corresponding to `<www>/ilamb/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
+!!! note
+    The plots will be available online at the URL corresponding to `<www>/ilamb/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
 
 ## Long Term Archiving with zstash
 
 Simulations that are deemed sufficiently valuable should be archived using `zstash` for long-term preservation. You can ask questions about `zstash` on the [zstash discussion board](https://github.com/E3SM-Project/zstash/discussions/categories/questions).
 
-> [!IMPORTANT]
-> Compy, Anvil and Chrysalis do not have local HPSS. We rely on NERSC HPSS for long-term archiving. If you are archiving a simulation run on Compy or LCRC (Chrysalis/Anvil), do all of the following steps. If you are archiving a simulation run on NERSC (Perlmutter), skip to step 4.
+!!! warning
+    Compy, Anvil and Chrysalis do not have local HPSS. We rely on NERSC HPSS for long-term archiving. If you are archiving a simulation run on Compy or LCRC (Chrysalis/Anvil), do all of the following steps. If you are archiving a simulation run on NERSC (Perlmutter), skip to step 4.
 
 ### 1. Clean up directory
 
@@ -572,8 +573,8 @@ done
 ```
 
 Load the E3SM Unified environment.
-> [!TIP]
-> The E3SM Unified environment activation commands can be found on [zppy's Getting started page](https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html). Alternatively, they can be found using [Mache](https://github.com/E3SM-Project/mache/tree/main/mache/machines): click the relevant machine and find the `base_path` listed under `[e3sm_unified]` -- the activation command will be `source <base_path>/load_latest_e3sm_unified_<machine_name>.sh`.
+!!! tip
+    The E3SM Unified environment activation commands can be found on [zppy's Getting started page](https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html). Alternatively, they can be found using [Mache](https://github.com/E3SM-Project/mache/tree/main/mache/machines): click the relevant machine and find the `base_path` listed under `[e3sm_unified]` -- the activation command will be `source <base_path>/load_latest_e3sm_unified_<machine_name>.sh`.
 
 Then, do the following:
 
@@ -643,22 +644,22 @@ do
 done
 ```
 
-> [!TIP]
-> If you want to check a long simulation, you can use the `--tars` option to split the checking into more manageable pieces:
->
-> ```shell
-> # Starting at 00005a until the end
-> zstash check --tars=00005a-
-> # Starting from the beginning to 00005a (included)
-> zstash check --tars=-00005a
-> # Specific range
-> zstash check --tars=00005a-00005c
-> # Selected tar files
-> zstash check --tars=00003e,00004e,000059
-> # Mix and match
-> zstash check --tars=000030-00003e,00004e,00005a-
-> ```
-
+!!! tip
+    If you want to check a long simulation, you can use the `--tars` option to split the checking into more manageable pieces:
+  
+    ```shell
+    # Starting at 00005a until the end
+    zstash check --tars=00005a-
+    # Starting from the beginning to 00005a (included)
+    zstash check --tars=-00005a
+    # Specific range
+    zstash check --tars=00005a-00005c
+    # Selected tar files
+    zstash check --tars=00003e,00004e,000059
+    # Mix and match
+    zstash check --tars=000030-00003e,00004e,00005a-
+    ```
+  
 Then, do the following:
 
 ```shell
