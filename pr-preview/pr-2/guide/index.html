@@ -1605,6 +1605,7 @@ emacs<span class="w"> </span>batch_zstash_check.bash
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you want to check a long simulation, you can use the <code>--tars</code> option to split the checking into more manageable pieces:</p>
+<p><!-- markdownlint-disable MD046 -->
 <div class="highlight"><pre><span></span><code><span class="c1"># Starting at 00005a until the end</span>
 zstash<span class="w"> </span>check<span class="w"> </span>--tars<span class="o">=</span>00005a-
 <span class="c1"># Starting from the beginning to 00005a (included)</span>
@@ -1616,6 +1617,7 @@ zstash<span class="w"> </span>check<span class="w"> </span>--tars<span class="o"
 <span class="c1"># Mix and match</span>
 zstash<span class="w"> </span>check<span class="w"> </span>--tars<span class="o">=</span><span class="m">000030</span>-00003e,00004e,00005a-
 </code></pre></div>
+<!-- markdownlint-restore --></p>
 </div>
 <p>Then, do the following:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>dtn01.nersc.gov
