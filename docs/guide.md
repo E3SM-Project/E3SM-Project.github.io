@@ -51,7 +51,6 @@ alias simulations="cd <simulations_dir>"
 
 1. TODO: this is just a demo! But you can have more aliases if you want!
 
-
 ## Configuring the Model Run – Run Script
 
 Start with an example of a run script for a low-resolution coupled simulation:  
@@ -654,6 +653,7 @@ done
 !!! tip
     If you want to check a long simulation, you can use the `--tars` option to split the checking into more manageable pieces:
   
+    <!-- markdownlint-disable MD046 -->
     ```shell
     # Starting at 00005a until the end
     zstash check --tars=00005a-
@@ -666,7 +666,8 @@ done
     # Mix and match
     zstash check --tars=000030-00003e,00004e,00005a-
     ```
-  
+    <!-- markdownlint-restore -->
+
 Then, do the following:
 
 ```shell
