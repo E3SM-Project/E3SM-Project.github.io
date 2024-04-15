@@ -1,3 +1,4 @@
 {
-    "line-length": false
+    "line-length": false,
+    "ul-indent": false
 }

@@ -71,9 +71,9 @@ Create a new run script or copy an existing one (such as the template above). Th
 
 - `readonly COMPSET="WCYCL1850"`: compset (configuration)
 - `readonly RESOLUTION="ne30pg2_r05_IcoswISC30E3r5"`: resolution. In this example, we have:
-  - `ne30pg2`: atmosphere (ne30 dynamics grid -- 30 spectral elements, pg2 physics grid)
-  - `r05`: land and river on 1/2 lat/lon grid (commonly referred to as "tri-grid")
-  - `IcoswISC30E3r5`: ocean and sea-ice on Icosahedral 30 km mesh with ice shelves cavities (wISC), E3SMv3 (E3) revision r5.
+    - `ne30pg2`: atmosphere (ne30 dynamics grid -- 30 spectral elements, pg2 physics grid)
+    - `r05`: land and river on 1/2 lat/lon grid (commonly referred to as "tri-grid")
+    - `IcoswISC30E3r5`: ocean and sea-ice on Icosahedral 30 km mesh with ice shelves cavities (wISC), E3SMv3 (E3) revision r5.
 - `readonly CASE_NAME="your_casename"`: case name
 - `# readonly CASE_GROUP=""`: This will let you mark multiple cases as part of the same group for later processing (e.g., with PACE).
 
