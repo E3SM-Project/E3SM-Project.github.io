@@ -1147,10 +1147,12 @@
 <p><code># Simulation</code></p>
 <ul>
 <li><code>readonly COMPSET="WCYCL1850"</code>: compset (configuration)</li>
-<li><code>readonly RESOLUTION="ne30pg2_r05_IcoswISC30E3r5"</code>: resolution. In this example, we have:</li>
+<li><code>readonly RESOLUTION="ne30pg2_r05_IcoswISC30E3r5"</code>: resolution. In this example, we have:<ul>
 <li><code>ne30pg2</code>: atmosphere (ne30 dynamics grid -- 30 spectral elements, pg2 physics grid)</li>
 <li><code>r05</code>: land and river on 1/2 lat/lon grid (commonly referred to as "tri-grid")</li>
 <li><code>IcoswISC30E3r5</code>: ocean and sea-ice on Icosahedral 30 km mesh with ice shelves cavities (wISC), E3SMv3 (E3) revision r5.</li>
+</ul>
+</li>
 <li><code>readonly CASE_NAME="your_casename"</code>: case name</li>
 <li><code># readonly CASE_GROUP=""</code>: This will let you mark multiple cases as part of the same group for later processing (e.g., with PACE).</li>
 </ul>
