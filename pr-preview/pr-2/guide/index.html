@@ -1318,15 +1318,48 @@ md5sum<span class="w"> </span>*.txt
 ./case.st_archive<span class="w"> </span>--last-date<span class="w"> </span><span class="m">0051</span>-01-01<span class="w"> </span>--force-move<span class="w"> </span>--no-incomplete-logs
 ls<span class="w"> </span>&lt;e3sm_simulations_dir&gt;/&lt;case_name&gt;/archive
 </code></pre></div>
-<p>Each component of the model has a directory under <code>archive/</code>. There are also two additional directories under <code>archive/</code>: <code>logs</code> holds the gzipped log files and <code>rest</code> holds the restart files.
-| Component | Directory | File naming pattern |
-| --- | --- | --- |
-| Atmosphere (Earth Atmospheric Model) | <code>archive/atm/hist</code> | <code>*.eam.h*</code> |
-| Coupler | <code>archive/cpl/hist</code> | <code>*.cpl.h*</code> |
-| Sea Ice (MPAS-Sea-Ice) | <code>archive/ice/hist</code> | <code>*.mpassi.hist.*</code> |
-| Land (Earth Land Model) | <code>archive/lnd/hist</code> | <code>*.elm.h*</code> |
-| Ocean (MPAS-Ocean) | <code>archive/ocn/hist</code> | <code>*.mpaso.hist.*</code> |
-| River Runoff (MOSART) | <code>archive/rof/hist</code> | <code>*.mosart.h*</code> |</p>
+<p>Each component of the model has a directory under <code>archive/</code>. There are also two additional directories under <code>archive/</code>: <code>logs</code> holds the gzipped log files and <code>rest</code> holds the restart files.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Directory</th>
+<th>File naming pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atmosphere (Earth Atmospheric Model)</td>
+<td><code>archive/atm/hist</code></td>
+<td><code>*.eam.h*</code></td>
+</tr>
+<tr>
+<td>Coupler</td>
+<td><code>archive/cpl/hist</code></td>
+<td><code>*.cpl.h*</code></td>
+</tr>
+<tr>
+<td>Sea Ice (MPAS-Sea-Ice)</td>
+<td><code>archive/ice/hist</code></td>
+<td><code>*.mpassi.hist.*</code></td>
+</tr>
+<tr>
+<td>Land (Earth Land Model)</td>
+<td><code>archive/lnd/hist</code></td>
+<td><code>*.elm.h*</code></td>
+</tr>
+<tr>
+<td>Ocean (MPAS-Ocean)</td>
+<td><code>archive/ocn/hist</code></td>
+<td><code>*.mpaso.hist.*</code></td>
+</tr>
+<tr>
+<td>River Runoff (MOSART)</td>
+<td><code>archive/rof/hist</code></td>
+<td><code>*.mosart.h*</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="performance-information">Performance Information</h2>
 <p>Model throughput is the number of simulated years per day (SYPD). You can find this with:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;simulations_dir&gt;/&lt;case_name&gt;/case_scripts/timing
@@ -1425,13 +1458,33 @@ grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;OK&
 </code></pre></div>
 <p>If you re-run <code>zppy</code>, it will check the status of tasks and will skip a task if its status is “OK”. As your simulation progresses, you can update the post-processing years in the configuration file and re-run <code>zppy</code>. Newly added task will be submitted, while previously completed ones will be skipped.</p>
 <h3 id="tasks">Tasks</h3>
-<p>If you run <code>ls &lt;simulations_dir&gt;/&lt;case_name&gt;/post/scripts</code> you’ll see files like <code>e3sm_diags_180x360_aave_model_vs_obs_0001-0020.status</code>. This is one e3sm_diags job. Parts of this file name are explained below:
-| Part of File Name | Meaning |
-| --- | --- |
-| <code>e3sm_diags</code> | Task |
-| <code>180x360_aave</code> | Grid |
-| <code>model_vs_obs</code> | <code>model_vs_model</code> or <code>model_vs_obs</code> |
-| <code>0001-0020</code> | First and last years |</p>
+<p>If you run <code>ls &lt;simulations_dir&gt;/&lt;case_name&gt;/post/scripts</code> you’ll see files like <code>e3sm_diags_180x360_aave_model_vs_obs_0001-0020.status</code>. This is one e3sm_diags job. Parts of this file name are explained below:</p>
+<table>
+<thead>
+<tr>
+<th>Part of File Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e3sm_diags</code></td>
+<td>Task</td>
+</tr>
+<tr>
+<td><code>180x360_aave</code></td>
+<td>Grid</td>
+</tr>
+<tr>
+<td><code>model_vs_obs</code></td>
+<td><code>model_vs_model</code> or <code>model_vs_obs</code></td>
+</tr>
+<tr>
+<td><code>0001-0020</code></td>
+<td>First and last years</td>
+</tr>
+</tbody>
+</table>
 <p>There is also a corresponding output file. It will have the same name but end with <code>.o&lt;job ID&gt;</code> instead of <code>.status</code>.</p>
 <h3 id="output">Output</h3>
 <p>The post-processing output is organized hierarchically. Examples:</p>
