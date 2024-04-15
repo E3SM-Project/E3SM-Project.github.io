@@ -43,22 +43,17 @@ You will be working in several directories.
 So, it may be useful to set the following aliases:
 
 ```shell
-# Model running (1)
+# Model running
 
 alias run_scripts="cd <run_scripts_dir>"
 alias simulations="cd <simulations_dir>"
 ```
 
-1. TODO: this is just a demo! But you can have more aliases if you want!
-
 ## Configuring the Model Run – Run Script
 
 Start with an example of a run script for a low-resolution coupled simulation:  
 
-We'll use the [template script](https://github.com/E3SM-Project/E3SM/blob/master/run_e3sm.template.sh) (1) in the E3SM repository, which uses Perlmutter.
-{ .annotate }
-
-1. TODO: this is just a demo! It's always good to start from this tried and trusted script!
+We'll use the [template script](https://github.com/E3SM-Project/E3SM/blob/master/run_e3sm.template.sh) in the E3SM repository, which uses Perlmutter.
 
 Create a new run script or copy an existing one (such as the template above). The path to it should be `<run_scripts_dir>/run.<case_name>.sh`
 
