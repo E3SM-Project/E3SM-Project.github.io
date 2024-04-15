@@ -280,6 +280,7 @@ ls <e3sm_simulations_dir>/<case_name>/archive
 ```
 
 Each component of the model has a directory under `archive/`. There are also two additional directories under `archive/`: `logs` holds the gzipped log files and `rest` holds the restart files.
+
 | Component | Directory | File naming pattern |
 | --- | --- | --- |
 | Atmosphere (Earth Atmospheric Model) | `archive/atm/hist` | `*.eam.h*` |
@@ -418,6 +419,7 @@ If you re-run `zppy`, it will check the status of tasks and will skip a task if 
 ### Tasks
 
 If you run `ls <simulations_dir>/<case_name>/post/scripts` you’ll see files like `e3sm_diags_180x360_aave_model_vs_obs_0001-0020.status`. This is one e3sm_diags job. Parts of this file name are explained below:
+
 | Part of File Name | Meaning |
 | --- | --- |
 | `e3sm_diags` | Task |
