@@ -524,7 +524,7 @@ Replace the baseline diagnostics in the template's table with relevant ones (e.g
 !!! note
     The plots will be available online at the URL corresponding to `<www>/mpas_analysis/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
 
-Make a bulleted list of links, e.g., for `<url_path>/ts_0001-0050_climo_0021-0050/`, create a bullet `“1-50 (time series), 21-50 (climatology)”.
+Make a bulleted list of links, e.g., for `<url_path>/ts_0001-0050_climo_0021-0050/`, create a bullet `"1-50 (time series), 21-50 (climatology)"`.
 
 ### ILAMB
 <!-- TODO: Add this section? -->
