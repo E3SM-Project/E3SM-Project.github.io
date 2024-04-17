@@ -1,6 +1,6 @@
 # Generate mapping files
 
-In order to pass data between different components at runtime, a set of mapping files between each component is generated offline. 
+In order to pass data between different components at runtime, a set of mapping files between each component is generated offline.
 
 See [Transition to TempestRemap for Atmosphere grids](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/178848194/Recommended+Mapping+Procedures+for+E3SM+Atmosphere+Grids) for a discussion of different remap algorithms and when to use each.
 
