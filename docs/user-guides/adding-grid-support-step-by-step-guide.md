@@ -11,8 +11,6 @@ compass tool to generate the mesh and dynamically adjusted initial condition.
 This procedure is detailed in a separate tutorial:
 https://mpas-dev.github.io/compass/latest/tutorials/dev_add_rrm.html
 
-
-
 1. [Generate a new grid file                                  ](adding-grid-support-step-by-step-guide/generate-new-grid-file.md)
 1. [Generate mapping files                                    ]()
 1. [Generate domain files                                     ]()
