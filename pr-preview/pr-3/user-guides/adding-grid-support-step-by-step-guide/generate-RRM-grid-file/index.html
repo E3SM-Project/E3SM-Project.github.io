@@ -316,32 +316,33 @@
 <h2 id="using-a-png-image-file">Using a PNG Image File</h2>
 <p>The most common is to create a grayscale <code>.png</code> image file with the correct aspect ratio that defines one or more refinement areas.</p>
 <p>The input PNG is a grayscale representation of a regular latitude-longitude grid (i.e. equiangular projection) with the level of shading determining the level of refinement: white for the coarse grid and black where maximum refinement is desired.  Shades of gray can be used to impose intermediate levels of refinement.  To determine the refinement region on the cubed-sphere mesh, each volume on the cubed-sphere grid is sampled from the PNG image to determine the desired level of refinement on that grid.  The transition region is then built around each refinement region using "paving" tiles, with optional smoothing of edges.</p>
-<p>Once the PNG file is created it can be used to generate the new exodus file. The example below creates a 3x refinement based on the ne30 grid that, which it typically used for production runs.
+<p>Once the PNG file is created it can be used to generate the new exodus file. The example below creates a 3x refinement based on the ne30 grid that, which it typically used for production runs.</p>
 <div class="highlight"><pre><span></span><code>SQuadGen --refine_file ${GRIDNAME}.png --resolution 30 --refine_level 3 --refine_type LOWCONN --smooth_type SPRING --smooth_dist 3 --smooth_iter 20 --output ${DATA_PATH}/${GRIDNAME}.g
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="creating-the-png-file-with-an-image-editor">Creating the PNG file with an image editor</h3>
-<p>It is often useful to start with a background image that already has the correct aspect ratio and is centered on 0 degrees longitude. The following PNG image (with base grid ne16) can be used as a template for drawing your refinement region so that grid lines are parallel to cubed-sphere arcs. This PNG file can be set as a background image in an editor like Photoshop or GIMP.  </p>
+<p>It is often useful to start with a background image that already has the correct aspect ratio and is centered on 0 degrees longitude. The following PNG image (with base grid ne16) can be used as a template for drawing your refinement region so that grid lines are parallel to cubed-sphere arcs. This PNG file can be set as a background image in an editor like Photoshop or GIMP.</p>
 <p><img alt="RRM_grid_reference.png" src="../RRM_grid_reference.png" /></p>
 <p>The refined region is then drawn on top of this image in a separate layer.  You can set the transparency between layers at, i.e. 50% with the grayscale image in front of the template.  When you are ready to save the image, you can change the transparency to 0% and export the image as a PNG.</p>
-<p>If a different "base grid" image is desired with more or less detail, this can be generated with 
+<p>If a different "base grid" image is desired with more or less detail, this can be generated with </p>
 <div class="highlight"><pre><span></span><code>./SQuadGen --resolution &lt;ne&gt; --output base_grid.g
 </code></pre></div>
-where <code>ne</code> is your desired base grid resolution.  The grid image can then be plotted with the <code>gridplot.ncl</code> script that is included with SQuadGen. Alternatively, <a href="https://www.pyngl.ucar.edu/">PyNGL</a> is a python replacement for NCL that also has good support for plotting unstructured meshes (despite being in "maintenance mode"). </p>
+<p>where <code>ne</code> is your desired base grid resolution.  The grid image can then be plotted with the <code>gridplot.ncl</code> script that is included with SQuadGen. Alternatively, <a href="https://www.pyngl.ucar.edu/">PyNGL</a> is a python replacement for NCL that also has good support for plotting unstructured meshes (despite being in "maintenance mode"). </p>
 <h3 id="creating-the-png-file-with-a-python-script">Creating the PNG file with a python script</h3>
 <p>The previous method of using an image editor can be somewhat cumbersome and inaccurate. Scripted generation of the refinement region is possible with python.</p>
-<p>In the first example below a SCRIP format grid file is used so that individual elements can be shaded, but this method was intended for the cell shading capability of PyNGL. The SCRIP file used in these examples can be generated with 3 simple TempestRemap commands:
+<p>In the first example below a SCRIP format grid file is used so that individual elements can be shaded, but this method was intended for the cell shading capability of PyNGL. The SCRIP file used in these examples can be generated with 3 simple TempestRemap commands:</p>
 <div class="highlight"><pre><span></span><code>NE=30
 GenerateCSMesh --alt --res ${NE} --file ${GRID_FILE_PATH}/ne${NE}.g
 GenerateVolumetricMesh --in ${GRID_FILE_PATH}/ne${NE}.g --out ${GRID_FILE_PATH}/ne${NE}pg2.g --np 2 --uniform
 ConvertMeshToSCRIP --in ${GRID_FILE_PATH}/ne${NE}pg2.g --out ${GRID_FILE_PATH}/ne${NE}pg2_scrip.nc
 </code></pre></div>
-For other plotting libraries it may be preferrable to use an equiangular SCRIP grid file, which can be generated with a simple NCO command. Here is an example of a 1 degree grid:
+<p>For other plotting libraries it may be preferrable to use an equiangular SCRIP grid file, which can be generated with a simple NCO command. Here is an example of a 1 degree grid:</p>
 <div class="highlight"><pre><span></span><code>ncremap -G ttl=Equi-Angular grid 1x1 degree, dimensions 180x360, cell edges on Poles/Equator and Prime Meridian/Date Line#latlon=180,360#lat_typ=uni#lon_typ=grn_wst -g /Users/zender/data/grids/cmip6_180x360_scrip.nc
-</code></pre></div></p>
+</code></pre></div>
 <p>Below is some example python code to generate a "feathered" refined region around a given central point. The resulting numpy array can then be plotted with your preferred plotting library (ex. matplotlib, pyngl)</p>
 <details>
   <summary>generate_RRM_png_feathered.py</summary>
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">ngl</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="o">,</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+    <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">ngl</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="o">,</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="n">target_lat</span><span class="p">,</span> <span class="n">target_lon</span> <span class="o">=</span> <span class="mf">39.7392</span><span class="p">,</span> <span class="mi">360</span><span class="o">-</span><span class="mf">104.9903</span> <span class="c1"># Denver, CO</span>
 <span class="c1">#-------------------------------------------------------------------------------</span>
 <span class="n">scrip_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;HOME&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;/E3SM/data_grid/ne30pg2_scrip.nc&#39;</span><span class="p">)</span>
@@ -456,7 +457,8 @@ For other plotting libraries it may be preferrable to use an equiangular SCRIP g
 <p>The next example creates a refinement region based on land fraction.</p>
 <details>
   <summary>generate_RRM_png_landfrac.py</summary>
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">ngl</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="o">,</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+    <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">ngl</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span><span class="o">,</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="n">refine_level</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">nsmooth</span>      <span class="o">=</span> <span class="mi">4</span>
 <span class="n">land_data_file</span> <span class="o">=</span> <span class="s1">&#39;inputdata/atm/cam/topo/USGS-gtopo30_0.9x1.25_remap_c051027.nc&#39;</span>
@@ -520,9 +522,9 @@ For other plotting libraries it may be preferrable to use an equiangular SCRIP g
 <h2 id="using-a-refinement-map">Using a Refinement Map</h2>
 <p>If <code>--loadcsrefinementmap</code> is specified the refinement map will be reloaded from a previously generated refine_map.dat file.  This option allows for manual editing of the cubed-sphere refine map.</p>
 <h2 id="using-rectangular-patches">Using Rectangular Patches</h2>
-<p>SQuadGen can now be used with the <code>--refine_rect</code> argument to define rectangular patches on the fly without the need for an image file. This argument takes the latitude and longitude corner locations that define the quadralateral, as well as the desirec refinement level:
+<p>SQuadGen can now be used with the <code>--refine_rect</code> argument to define rectangular patches on the fly without the need for an image file. This argument takes the latitude and longitude corner locations that define the quadralateral, as well as the desirec refinement level:</p>
 <div class="highlight"><pre><span></span><code>--refine_rect &quot;&lt;lon0&gt;,&lt;lat0&gt;,&lt;lon1&gt;,&lt;lat1&gt;,&lt;refinement level&gt;&quot;
-</code></pre></div></p>
+</code></pre></div>
 
 
 
