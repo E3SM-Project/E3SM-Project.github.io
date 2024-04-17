@@ -325,10 +325,10 @@
 <p>It is often useful to start with a background image that already has the correct aspect ratio and is centered on 0 degrees longitude. The following PNG image (with base grid ne16) can be used as a template for drawing your refinement region so that grid lines are parallel to cubed-sphere arcs. This PNG file can be set as a background image in an editor like Photoshop or GIMP.</p>
 <p><img alt="RRM_grid_reference.png" src="../RRM_grid_reference.png" /></p>
 <p>The refined region is then drawn on top of this image in a separate layer.  You can set the transparency between layers at, i.e. 50% with the grayscale image in front of the template.  When you are ready to save the image, you can change the transparency to 0% and export the image as a PNG.</p>
-<p>If a different "base grid" image is desired with more or less detail, this can be generated with </p>
+<p>If a different "base grid" image is desired with more or less detail, this can be generated with:</p>
 <div class="highlight"><pre><span></span><code>./SQuadGen<span class="w"> </span>--resolution<span class="w"> </span>&lt;ne&gt;<span class="w"> </span>--output<span class="w"> </span>base_grid.g
 </code></pre></div>
-<p>where <code>ne</code> is your desired base grid resolution.  The grid image can then be plotted with the <code>gridplot.ncl</code> script that is included with SQuadGen. Alternatively, <a href="https://www.pyngl.ucar.edu/">PyNGL</a> is a python replacement for NCL that also has good support for plotting unstructured meshes (despite being in "maintenance mode"). </p>
+<p>where <code>ne</code> is your desired base grid resolution.  The grid image can then be plotted with the <code>gridplot.ncl</code> script that is included with SQuadGen. Alternatively, <a href="https://www.pyngl.ucar.edu/">PyNGL</a> is a python replacement for NCL that also has good support for plotting unstructured meshes (despite being in "maintenance mode").</p>
 <h3 id="creating-the-png-file-with-a-python-script">Creating the PNG file with a python script</h3>
 <p>The previous method of using an image editor can be somewhat cumbersome and inaccurate. Scripted generation of the refinement region is possible with python.</p>
 <p>In the first example below a SCRIP format grid file is used so that individual elements can be shaded, but this method was intended for the cell shading capability of PyNGL. The SCRIP file used in these examples can be generated with 3 simple TempestRemap commands:</p>
