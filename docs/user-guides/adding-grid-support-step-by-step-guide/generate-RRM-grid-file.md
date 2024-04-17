@@ -13,8 +13,8 @@ The input PNG is a grayscale representation of a regular latitude-longitude grid
 
 Once the PNG file is created it can be used to generate the new exodus file. The example below creates a 3x refinement based on the ne30 grid that, which it typically used for production runs.
 
-```
-SQuadGen --refine_file ${GRIDNAME}.png --resolution 30 --refine_level 3 --refine_type LOWCONN --smooth_type SPRING --smooth_dist 3 --smooth_iter 20 --output ${DATA_PATH}/${GRIDNAME}.g
+```bash
+./SQuadGen --refine_file ${GRIDNAME}.png --resolution 30 --refine_level 3 --refine_type LOWCONN --smooth_type SPRING --smooth_dist 3 --smooth_iter 20 --output ${DATA_PATH}/${GRIDNAME}.g
 ```
 
 ### Creating the PNG file with an image editor
@@ -27,7 +27,7 @@ The refined region is then drawn on top of this image in a separate layer.  You 
 
 If a different "base grid" image is desired with more or less detail, this can be generated with 
 
-```
+```bash
 ./SQuadGen --resolution <ne> --output base_grid.g
 ```
 
@@ -39,7 +39,7 @@ The previous method of using an image editor can be somewhat cumbersome and inac
 
 In the first example below a SCRIP format grid file is used so that individual elements can be shaded, but this method was intended for the cell shading capability of PyNGL. The SCRIP file used in these examples can be generated with 3 simple TempestRemap commands:
 
-```
+```bash
 NE=30
 GenerateCSMesh --alt --res ${NE} --file ${GRID_FILE_PATH}/ne${NE}.g
 GenerateVolumetricMesh --in ${GRID_FILE_PATH}/ne${NE}.g --out ${GRID_FILE_PATH}/ne${NE}pg2.g --np 2 --uniform
@@ -48,7 +48,7 @@ ConvertMeshToSCRIP --in ${GRID_FILE_PATH}/ne${NE}pg2.g --out ${GRID_FILE_PATH}/n
 
 For other plotting libraries it may be preferrable to use an equiangular SCRIP grid file, which can be generated with a simple NCO command. Here is an example of a 1 degree grid:
 
-```
+```bash
 ncremap -G ttl=Equi-Angular grid 1x1 degree, dimensions 180x360, cell edges on Poles/Equator and Prime Meridian/Date Line#latlon=180,360#lat_typ=uni#lon_typ=grn_wst -g /Users/zender/data/grids/cmip6_180x360_scrip.nc
 ```
 
@@ -57,7 +57,6 @@ Below is some example python code to generate a "feathered" refined region aroun
 <details>
   <summary>generate_RRM_png_feathered.py</summary>
     ```python
-    #!/usr/bin/env python
     import os, ngl, numpy as np, xarray as xr
     target_lat, target_lon = 39.7392, 360-104.9903 # Denver, CO
     #-------------------------------------------------------------------------------
@@ -175,7 +174,6 @@ The next example creates a refinement region based on land fraction.
 <details>
   <summary>generate_RRM_png_landfrac.py</summary>
     ```python
-    #!/usr/bin/env python
     import os, ngl, numpy as np, xarray as xr
     refine_level = 1
     nsmooth      = 4
@@ -245,6 +243,6 @@ If `--loadcsrefinementmap` is specified the refinement map will be reloaded from
 
 SQuadGen can now be used with the `--refine_rect` argument to define rectangular patches on the fly without the need for an image file. This argument takes the latitude and longitude corner locations that define the quadralateral, as well as the desirec refinement level:
 
-```
+```bash
 --refine_rect "<lon0>,<lat0>,<lon1>,<lat1>,<refinement level>"
 ```
