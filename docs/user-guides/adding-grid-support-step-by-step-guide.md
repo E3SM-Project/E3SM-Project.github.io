@@ -1,4 +1,4 @@
-# Adding Support for New Grids - Step-by-Step Guide
+# Adding Support for New Grids
 
 The purpose of this guide is to outline all the necessary steps for running E3SM on a new grid for the atmosphere and land components. The process is similar for uniform and regionally refined grids, although regionally refined cases will likely require some special considerations which will be noted where appropriate.
 
@@ -8,6 +8,9 @@ If you wish to add a new ocean and sea-ice mesh you will need to use the compass
 <!-- disable certain linter checks here to allow vertical alignment of links -->
 <!-- markdownlint-disable MD039 --> <!-- no-space-in-links -->
 <!-- markdownlint-disable MD042 --> <!-- no-empty-links -->
+
+## Step-by-Step Guide
+
 1. [Generate a new grid file                                  ](adding-grid-support-step-by-step-guide/generate-new-grid-file.md)
 1. [Generate mapping files                                    ]()
 1. [Generate domain files                                     ]()
@@ -17,3 +20,7 @@ If you wish to add a new ocean and sea-ice mesh you will need to use the compass
 1. [Generate an initial condition for land (*finidat*)        ]()
 1. [Create a new dry deposition file (*depends on use case*)  ]()
 1. [Modify E3SM configuration files to support the new grid   ]()
+
+## Other Useful Tutorials
+
+1. [Generate a RRM Grid File with SQuadGen                    ](adding-grid-support-step-by-step-guide/generate-RRM-grid-file.md)
