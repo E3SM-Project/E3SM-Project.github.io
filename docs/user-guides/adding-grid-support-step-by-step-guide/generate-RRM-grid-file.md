@@ -9,38 +9,42 @@ The most common is to create a grayscale `.png` image file with the correct aspe
 The input PNG is a grayscale representation of a regular latitude-longitude grid (i.e. equiangular projection) with the level of shading determining the level of refinement: white for the coarse grid and black where maximum refinement is desired.  Shades of gray can be used to impose intermediate levels of refinement.  To determine the refinement region on the cubed-sphere mesh, each volume on the cubed-sphere grid is sampled from the PNG image to determine the desired level of refinement on that grid.  The transition region is then built around each refinement region using "paving" tiles, with optional smoothing of edges.
 
 Once the PNG file is created it can be used to generate the new exodus file. The example below creates a 3x refinement based on the ne30 grid that, which it typically used for production runs.
+
 ```
 SQuadGen --refine_file ${GRIDNAME}.png --resolution 30 --refine_level 3 --refine_type LOWCONN --smooth_type SPRING --smooth_dist 3 --smooth_iter 20 --output ${DATA_PATH}/${GRIDNAME}.g
-
 ```
 
 ### Creating the PNG file with an image editor
 
-It is often useful to start with a background image that already has the correct aspect ratio and is centered on 0 degrees longitude. The following PNG image (with base grid ne16) can be used as a template for drawing your refinement region so that grid lines are parallel to cubed-sphere arcs. This PNG file can be set as a background image in an editor like Photoshop or GIMP.  
+It is often useful to start with a background image that already has the correct aspect ratio and is centered on 0 degrees longitude. The following PNG image (with base grid ne16) can be used as a template for drawing your refinement region so that grid lines are parallel to cubed-sphere arcs. This PNG file can be set as a background image in an editor like Photoshop or GIMP.
 
 ![RRM_grid_reference.png](RRM_grid_reference.png)
 
 The refined region is then drawn on top of this image in a separate layer.  You can set the transparency between layers at, i.e. 50% with the grayscale image in front of the template.  When you are ready to save the image, you can change the transparency to 0% and export the image as a PNG.
 
 If a different "base grid" image is desired with more or less detail, this can be generated with 
+
 ```
 ./SQuadGen --resolution <ne> --output base_grid.g
 ```
-where `ne` is your desired base grid resolution.  The grid image can then be plotted with the `gridplot.ncl` script that is included with SQuadGen. Alternatively, [PyNGL](https://www.pyngl.ucar.edu/) is a python replacement for NCL that also has good support for plotting unstructured meshes (despite being in "maintenance mode"). 
 
+where `ne` is your desired base grid resolution.  The grid image can then be plotted with the `gridplot.ncl` script that is included with SQuadGen. Alternatively, [PyNGL](https://www.pyngl.ucar.edu/) is a python replacement for NCL that also has good support for plotting unstructured meshes (despite being in "maintenance mode"). 
 
 ### Creating the PNG file with a python script
 
 The previous method of using an image editor can be somewhat cumbersome and inaccurate. Scripted generation of the refinement region is possible with python.
 
 In the first example below a SCRIP format grid file is used so that individual elements can be shaded, but this method was intended for the cell shading capability of PyNGL. The SCRIP file used in these examples can be generated with 3 simple TempestRemap commands:
+
 ```
 NE=30
 GenerateCSMesh --alt --res ${NE} --file ${GRID_FILE_PATH}/ne${NE}.g
 GenerateVolumetricMesh --in ${GRID_FILE_PATH}/ne${NE}.g --out ${GRID_FILE_PATH}/ne${NE}pg2.g --np 2 --uniform
 ConvertMeshToSCRIP --in ${GRID_FILE_PATH}/ne${NE}pg2.g --out ${GRID_FILE_PATH}/ne${NE}pg2_scrip.nc
 ```
+
 For other plotting libraries it may be preferrable to use an equiangular SCRIP grid file, which can be generated with a simple NCO command. Here is an example of a 1 degree grid:
+
 ```
 ncremap -G ttl=Equi-Angular grid 1x1 degree, dimensions 180x360, cell edges on Poles/Equator and Prime Meridian/Date Line#latlon=180,360#lat_typ=uni#lon_typ=grn_wst -g /Users/zender/data/grids/cmip6_180x360_scrip.nc
 ```
@@ -50,6 +54,7 @@ Below is some example python code to generate a "feathered" refined region aroun
 <details>
   <summary>generate_RRM_png_feathered.py</summary>
     ```python
+    #!/usr/bin/env python
     import os, ngl, numpy as np, xarray as xr
     target_lat, target_lon = 39.7392, 360-104.9903 # Denver, CO
     #-------------------------------------------------------------------------------
@@ -167,6 +172,7 @@ The next example creates a refinement region based on land fraction.
 <details>
   <summary>generate_RRM_png_landfrac.py</summary>
     ```python
+    #!/usr/bin/env python
     import os, ngl, numpy as np, xarray as xr
     refine_level = 1
     nsmooth      = 4
@@ -235,6 +241,7 @@ If `--loadcsrefinementmap` is specified the refinement map will be reloaded from
 ## Using Rectangular Patches
 
 SQuadGen can now be used with the `--refine_rect` argument to define rectangular patches on the fly without the need for an image file. This argument takes the latitude and longitude corner locations that define the quadralateral, as well as the desirec refinement level:
+
 ```
 --refine_rect "<lon0>,<lat0>,<lon1>,<lat1>,<refinement level>"
 ```
