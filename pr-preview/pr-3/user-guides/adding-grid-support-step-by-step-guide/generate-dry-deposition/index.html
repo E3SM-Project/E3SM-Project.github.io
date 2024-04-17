@@ -16,7 +16,7 @@
     
     
       
-        <title>Generate mapping files - E3SM-Project</title>
+        <title>Generate a Dry Deposition File - E3SM-Project</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#generate-mapping-files" class="md-skip">
+        <a href="#generate-a-dry-deposition-file" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Generate mapping files
+              Generate a Dry Deposition File
             
           </span>
         </div>
@@ -252,10 +252,7 @@
                   
 
 
-<h1 id="generate-mapping-files">Generate mapping files</h1>
-<p>In order to pass data between different components at runtime, a set of mapping files between each component is generated offline.</p>
-<p>See <a href="https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/178848194/Recommended+Mapping+Procedures+for+E3SM+Atmosphere+Grids">Recommended Mapping Procedures for E3SM Atmosphere Grids</a> for a discussion of different remap algorithms and when to use each.</p>
-<p>TempestRemap and ESMF are the backends that generate the mapping weights, but this is all nicely encapsulated using ncremap. Tempest is the preferred method for creating mapping files. ncremap will call TempestRemap or ESMF depending on the algorithm argument and input file types. If exodus files are provided (i.e. <code>*.g</code>) then TempestRemap commands will be used. The ESMF tools are adequate for making atmosphere-only-type component sets for E3SM, but this tool is less conservative than TempestRemap. If you are making grids for a coupled run, then TempestRemap should be used wherever possible. Currently, TempestRemap has trouble with masked grids, such those that are needed for land data generation, so ESMF is still required for certain tasks.</p>
+<h1 id="generate-a-dry-deposition-file">Generate a Dry Deposition File</h1>
 
 
 
