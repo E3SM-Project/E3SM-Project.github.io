@@ -246,3 +246,11 @@ SQuadGen can now be used with the `--refine_rect` argument to define rectangular
 ```bash
 --refine_rect "<lon0>,<lat0>,<lon1>,<lat1>,<refinement level>"
 ```
+
+## A Note on testing RRM Quality
+
+RRM "quality" can be measured with the “Max Dinv-based element distortion” metric.  This will be printed in the log file for standalone HOMME or EAM simulations and can be obtained from the log files during the topography generation process.  
+
+This metric measures how distorted the elements become in the mesh transition region.  It is the ratio of the two singular values of the 2x2 derivative matrix of the element map to the unit square, representing the ration of the largest length scale to the smallest length scale.  
+
+A grid of perfect quadrilaterals will have a value of 1.0.  The equal-angle cubed-sphere grid has a value of 1.7.   A high quality regionally refined grid will have a value less than 4.  With a high quality grid, usually one can run with the timesteps used in a uniform grid with matching fine resolution.  RRM grids with a value > 4 may require smaller timesteps for stability.   Very large values indicate a problem with the grid and it should be redesigned. 

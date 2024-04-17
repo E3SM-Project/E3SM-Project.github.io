@@ -23,3 +23,14 @@ The naming convention for RRM grid files should follow:
 For example, for a RRM with 4x refinement from ne30 to ne120 over CONUS, we should use the convention conus_ne30x4.g (note that existing meshes may have used the old naming convention `<area of refinement>x<refinement level>v<version>.g`, but future meshes should use the new naming convention).
 
 The Exodus file contains only information about the position of the spectral element on the sphere. For SE aware utilities such as TempestRemap, they can use the polynomial order and the reference element map to fill in necessary data such as the locations of the nodal GLL points. For non-SE aware utilities, we need additional meta data, described in the next section.  
+
+## Generating a "pg2" SCRIP Grid File
+
+Starting in E3SMv2 the physics calculations and standard history output use a finite volume (FV) "pg2" grid. Online mapping within the component coupler between the atmosphere and surface components requires FV-to-FV type maps, and generating these maps will require a grid file for pg2 grid. These are easily generated with TempestRemap commands as follows:
+
+```
+NE=30
+GenerateCSMesh --alt --res ${NE} --file ${GRID_FILE_PATH}/ne${NE}.g
+GenerateVolumetricMesh --in ${GRID_FILE_PATH}/ne${NE}.g --out ${GRID_FILE_PATH}/ne${NE}pg2.g --np 2 --uniform
+ConvertMeshToSCRIP --in ${GRID_FILE_PATH}/ne${NE}pg2.g --out ${GRID_FILE_PATH}/ne${NE}pg2_scrip.nc
+```
