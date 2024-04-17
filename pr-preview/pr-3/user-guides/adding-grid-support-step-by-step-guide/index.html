@@ -16,7 +16,7 @@
     
     
       
-        <title>Adding Support for New Grids - Step-by-Step Guide - E3SM-Project</title>
+        <title>Adding Support for New Grids - E3SM-Project</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adding-support-for-new-grids-step-by-step-guide" class="md-skip">
+        <a href="#adding-support-for-new-grids" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Adding Support for New Grids - Step-by-Step Guide
+              Adding Support for New Grids
             
           </span>
         </div>
@@ -239,6 +239,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Guide
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-useful-tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Useful Tutorials
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -252,22 +278,29 @@
                   
 
 
-<h1 id="adding-support-for-new-grids-step-by-step-guide">Adding Support for New Grids - Step-by-Step Guide</h1>
+<h1 id="adding-support-for-new-grids">Adding Support for New Grids</h1>
 <p>The purpose of this guide is to outline all the necessary steps for running E3SM on a new grid for the atmosphere and land components. The process is similar for uniform and regionally refined grids, although regionally refined cases will likely require some special considerations which will be noted where appropriate.</p>
 <p>If you wish to add a new ocean and sea-ice mesh you will need to use the compass tool to generate the mesh and dynamically adjusted initial condition. This procedure is detailed in a separate tutorial:
 <a href="https://mpas-dev.github.io/compass/latest/tutorials/dev_add_rrm.html">https://mpas-dev.github.io/compass/latest/tutorials/dev_add_rrm.html</a></p>
 <!-- disable certain linter checks here to allow vertical alignment of links -->
 <!-- markdownlint-disable MD039 -->
 <!-- markdownlint-disable MD042 -->
-<p>1. <a href="generate-new-grid-file/">Generate a new grid file                                  </a>
-1. <a href="">Generate mapping files                                    </a>
-1. <a href="">Generate domain files                                     </a>
-1. <a href="">Generate a topography file                                </a>
-1. <a href="">Generate an initial condition for the atmosphere          </a>
-1. <a href="">Generate land surface input data (<em>fsurdat</em>)              </a>
-1. <a href="">Generate an initial condition for land (<em>finidat</em>)        </a>
-1. <a href="">Create a new dry deposition file (<em>depends on use case</em>)  </a>
-1. <a href="">Modify E3SM configuration files to support the new grid   </a></p>
+<h2 id="step-by-step-guide">Step-by-Step Guide</h2>
+<ol>
+<li><a href="generate-new-grid-file/">Generate a new grid file                                  </a></li>
+<li><a href="">Generate mapping files                                    </a></li>
+<li><a href="">Generate domain files                                     </a></li>
+<li><a href="">Generate a topography file                                </a></li>
+<li><a href="">Generate an initial condition for the atmosphere          </a></li>
+<li><a href="">Generate land surface input data (<em>fsurdat</em>)              </a></li>
+<li><a href="">Generate an initial condition for land (<em>finidat</em>)        </a></li>
+<li><a href="">Create a new dry deposition file (<em>depends on use case</em>)  </a></li>
+<li><a href="">Modify E3SM configuration files to support the new grid   </a></li>
+</ol>
+<h2 id="other-useful-tutorials">Other Useful Tutorials</h2>
+<ol>
+<li><a href="generate-RRM-grid-file/">Generate a RRM Grid File with SQuadGen                    </a></li>
+</ol>
 <!-- no-space-in-links --><!-- no-empty-links -->
 
 

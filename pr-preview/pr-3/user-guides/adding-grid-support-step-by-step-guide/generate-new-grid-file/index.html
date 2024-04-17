@@ -239,6 +239,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generating-a-standard-exodus-grid-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating a Standard Exodus Grid File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-a-regionally-refined-grid-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating a Regionally Refined Grid File
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -253,6 +279,19 @@
 
 
 <h1 id="generate-a-new-grid-file">Generate a new Grid File</h1>
+<p>In order to generate mapping files between a new atmosphere grid and the surface component grids, we need a file that describes the new grid. <a href="https://github.com/ClimateGlobalChange/tempestremap">TempestRemap</a> is our preferred tool for grid file generation because it can handle the spectral element grids used by the atmosphere dycore. The initial grid file will be saved in an "exodus" file with a <code>.g</code> extension (see <a href="../../adding-grid-support-grid-types/">Types of Grid Description Files</a> for more info). TempestRemap can be installed via conda.</p>
+<h2 id="generating-a-standard-exodus-grid-file">Generating a Standard Exodus Grid File</h2>
+<p>Once TempestRemap is in our environment we can easily generate an exodus file by calling TempestRemap directly:</p>
+<div class="highlight"><pre><span></span><code>GenerateCSMesh --alt --res 4 --file ne4.g
+</code></pre></div>
+<h2 id="generating-a-regionally-refined-grid-file">Generating a Regionally Refined Grid File</h2>
+<p>For a regionally refined mesh (RRM) <a href="https://github.com/ClimateGlobalChange/squadgen">SQuadGen</a> is used to define the refined area(s). <a href="../generate-RRM-grid-file/">This tutorial</a> includes details and examples of using SQuadGen to generate RRM grid files.</p>
+<p>The naming convention for RRM grid files should follow: 
+<div class="highlight"><pre><span></span><code>&lt;refined_area_name&gt;_&lt;base_resolution&gt;x&lt;refinement_level&gt;.g
+</code></pre></div>
+For example, for a RRM with 4x refinement from ne30 to ne120 over CONUS, we should use the convention conus_ne30x4.g (note that existing meshes may have used the old naming convention <code>&lt;area of refinement&gt;x&lt;refinement level&gt;v&lt;version&gt;.g</code>, but future meshes should use the new naming convention).</p>
+<p>The Exodus file contains only information about the position of the spectral element on the sphere. For SE aware utilities such as TempestRemap, they can use the polynomial order and the reference element map to fill in necessary data such as the locations of the nodal GLL points. For non-SE aware utilities, we need additional meta data, described in the next section.  </p>
+<p><a href="../../adding-grid-support-SE-grid-overview/">Atmosphere Grid Overview</a></p>
 
 
 
