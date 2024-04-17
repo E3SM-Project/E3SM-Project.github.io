@@ -6,7 +6,7 @@ In order to generate mapping files between a new atmosphere grid and the surface
 
 Once TempestRemap is in our environment we can easily generate an exodus file by calling TempestRemap directly:
 
-```bash
+```shell
 GenerateCSMesh --alt --res 4 --file ne4.g
 ```
 
@@ -16,7 +16,7 @@ For a regionally refined mesh (RRM) [SQuadGen](https://github.com/ClimateGlobalC
 
 The naming convention for RRM grid files should follow:
 
-```bash
+```shell
 <refined_area_name>_<base_resolution>x<refinement_level>.g
 ```
 
@@ -28,7 +28,7 @@ The Exodus file contains only information about the position of the spectral ele
 
 Starting in E3SMv2 the physics calculations and standard history output use a finite volume (FV) "pg2" grid. Online mapping within the component coupler between the atmosphere and surface components requires FV-to-FV type maps, and generating these maps will require a grid file for pg2 grid. These are easily generated with TempestRemap commands as follows:
 
-```bash
+```shell
 NE=30
 GenerateCSMesh --alt --res ${NE} --file ${GRID_FILE_PATH}/ne${NE}.g
 GenerateVolumetricMesh --in ${GRID_FILE_PATH}/ne${NE}.g --out ${GRID_FILE_PATH}/ne${NE}pg2.g --np 2 --uniform
