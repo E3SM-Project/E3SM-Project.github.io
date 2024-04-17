@@ -18,6 +18,6 @@ For a np4 grid with N elements per cube edge the total number of unique GLL node
 Starting in v2, physics calculations and history output in E3SM use a quasi-equal area finite volume (FV) grid, rather the GLL nodes of the spectral element grid. This FV grid is constructed byt dividing each spectral element of the cube-sphere into a grid of 2x2 subcells, referred to as "pg2" or "physgrid" (shown below). Finer divisions of the spectral element are possible, such as 3x3, but these grids do not seem to have any notable advantages (see [Hannah et al. 2021](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020MS002419)). Quantities on the physgrid should be considered cell average values over each FV cell, rather than nodal values.
 
 For a pg2 grid with N elements per cube edge the total number of physics columns can be calculated as:  
-`ncol = N*N*6*(2*2)` 
+`ncol = N*N*6*(2*2)`
 
 ![ne4pg2 grid illustration](grid_illustration_ne4pg2.png)
