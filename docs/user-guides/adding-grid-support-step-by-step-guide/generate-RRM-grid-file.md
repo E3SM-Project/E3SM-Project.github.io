@@ -1,5 +1,8 @@
 # Generate a RRM Grid File with SQuadGen
 
+<!-- disable linter checks for inline html to allow collapsable code sections -->
+<!-- markdownlint-disable MD033 --> <!-- no-inline-html -->
+
 There are three ways to create a regionally refined grid file for E3SM using [SQuadGen](https://github.com/ClimateGlobalChange/squadgen), which are outlined below.
 
 ## Using a PNG Image File
