@@ -296,6 +296,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#a-note-on-testing-rrm-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Note on testing RRM Quality
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -525,6 +534,10 @@ ConvertMeshToSCRIP<span class="w"> </span>--in<span class="w"> </span><span clas
 <p>SQuadGen can now be used with the <code>--refine_rect</code> argument to define rectangular patches on the fly without the need for an image file. This argument takes the latitude and longitude corner locations that define the quadralateral, as well as the desirec refinement level:</p>
 <div class="highlight"><pre><span></span><code>--refine_rect<span class="w"> </span><span class="s2">&quot;&lt;lon0&gt;,&lt;lat0&gt;,&lt;lon1&gt;,&lt;lat1&gt;,&lt;refinement level&gt;&quot;</span>
 </code></pre></div>
+<h2 id="a-note-on-testing-rrm-quality">A Note on testing RRM Quality</h2>
+<p>RRM "quality" can be measured with the “Max Dinv-based element distortion” metric.  This will be printed in the log file for standalone HOMME or EAM simulations and can be obtained from the log files during the topography generation process.  </p>
+<p>This metric measures how distorted the elements become in the mesh transition region.  It is the ratio of the two singular values of the 2x2 derivative matrix of the element map to the unit square, representing the ration of the largest length scale to the smallest length scale.  </p>
+<p>A grid of perfect quadrilaterals will have a value of 1.0.  The equal-angle cubed-sphere grid has a value of 1.7.   A high quality regionally refined grid will have a value less than 4.  With a high quality grid, usually one can run with the timesteps used in a uniform grid with matching fine resolution.  RRM grids with a value &gt; 4 may require smaller timesteps for stability.   Very large values indicate a problem with the grid and it should be redesigned. </p>
 
 
 
