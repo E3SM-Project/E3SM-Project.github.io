@@ -25,13 +25,13 @@ It is often useful to start with a background image that already has the correct
 
 The refined region is then drawn on top of this image in a separate layer.  You can set the transparency between layers at, i.e. 50% with the grayscale image in front of the template.  When you are ready to save the image, you can change the transparency to 0% and export the image as a PNG.
 
-If a different "base grid" image is desired with more or less detail, this can be generated with 
+If a different "base grid" image is desired with more or less detail, this can be generated with:
 
 ```bash
 ./SQuadGen --resolution <ne> --output base_grid.g
 ```
 
-where `ne` is your desired base grid resolution.  The grid image can then be plotted with the `gridplot.ncl` script that is included with SQuadGen. Alternatively, [PyNGL](https://www.pyngl.ucar.edu/) is a python replacement for NCL that also has good support for plotting unstructured meshes (despite being in "maintenance mode"). 
+where `ne` is your desired base grid resolution.  The grid image can then be plotted with the `gridplot.ncl` script that is included with SQuadGen. Alternatively, [PyNGL](https://www.pyngl.ucar.edu/) is a python replacement for NCL that also has good support for plotting unstructured meshes (despite being in "maintenance mode").
 
 ### Creating the PNG file with a python script
 
