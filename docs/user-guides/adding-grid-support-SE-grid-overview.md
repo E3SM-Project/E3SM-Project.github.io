@@ -20,5 +20,4 @@ Starting in v2, physics calculations and history output in E3SM use a quasi-equa
 For a pg2 grid with N elements per cube edge the total number of physics columns can be calculated as:  
 `ncol = N*N*6*(2*2)` 
 
-
 ![ne4pg2 grid illustration](grid_illustration_ne4pg2.png)

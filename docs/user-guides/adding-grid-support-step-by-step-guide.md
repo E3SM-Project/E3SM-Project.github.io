@@ -3,7 +3,7 @@
 The purpose of this guide is to outline all the necessary steps for running E3SM on a new grid for the atmosphere and land components. The process is similar for uniform and regionally refined grids, although regionally refined cases will likely require some special considerations which will be noted where appropriate.
 
 If you wish to add a new ocean and sea-ice mesh you will need to use the compass tool to generate the mesh and dynamically adjusted initial condition. This procedure is detailed in a separate tutorial:
-https://mpas-dev.github.io/compass/latest/tutorials/dev_add_rrm.html
+<https://mpas-dev.github.io/compass/latest/tutorials/dev_add_rrm.html>
 
 <!-- disable certain linter checks here to allow vertical alignment of links -->
 <!-- markdownlint-disable MD039 --> <!-- no-space-in-links -->
