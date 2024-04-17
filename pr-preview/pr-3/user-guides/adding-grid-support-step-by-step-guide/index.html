@@ -253,26 +253,22 @@
 
 
 <h1 id="adding-support-for-new-grids-step-by-step-guide">Adding Support for New Grids - Step-by-Step Guide</h1>
-<p>The purpose of this guide is to outline all the necessary steps for running 
-E3SM on a new grid for the atmosphere and land components. The process is 
-similar for uniform and regionally refined grids, although regionally refined 
-cases will likely require some special considerations which will be noted where 
-appropriate.</p>
-<p>If you wish to add a new ocean and sea-ice mesh you will need to use the 
-compass tool to generate the mesh and dynamically adjusted initial condition.
-This procedure is detailed in a separate tutorial:
+<p>The purpose of this guide is to outline all the necessary steps for running E3SM on a new grid for the atmosphere and land components. The process is similar for uniform and regionally refined grids, although regionally refined cases will likely require some special considerations which will be noted where appropriate.</p>
+<p>If you wish to add a new ocean and sea-ice mesh you will need to use the compass tool to generate the mesh and dynamically adjusted initial condition. This procedure is detailed in a separate tutorial:
 https://mpas-dev.github.io/compass/latest/tutorials/dev_add_rrm.html</p>
-<ol>
-<li><a href="generate-new-grid-file/">Generate a new grid file                                  </a></li>
-<li><a href="">Generate mapping files                                    </a></li>
-<li><a href="">Generate domain files                                     </a></li>
-<li><a href="">Generate a topography file                                </a></li>
-<li><a href="">Generate an initial condition for the atmosphere          </a></li>
-<li><a href="">Generate land surface input data (<em>fsurdat</em>)              </a></li>
-<li><a href="">Generate an initial condition for land (<em>finidat</em>)        </a></li>
-<li><a href="">Create a new dry deposition file (<em>depends on use case</em>)  </a></li>
-<li><a href="">Modify E3SM configuration files to support the new grid   </a></li>
-</ol>
+<!-- disable certain linter checks here to allow vertical alignment of links -->
+<!-- markdownlint-disable MD039 -->
+<!-- markdownlint-disable MD042 -->
+<p>1. <a href="generate-new-grid-file/">Generate a new grid file                                  </a>
+1. <a href="">Generate mapping files                                    </a>
+1. <a href="">Generate domain files                                     </a>
+1. <a href="">Generate a topography file                                </a>
+1. <a href="">Generate an initial condition for the atmosphere          </a>
+1. <a href="">Generate land surface input data (<em>fsurdat</em>)              </a>
+1. <a href="">Generate an initial condition for land (<em>finidat</em>)        </a>
+1. <a href="">Create a new dry deposition file (<em>depends on use case</em>)  </a>
+1. <a href="">Modify E3SM configuration files to support the new grid   </a></p>
+<!-- no-space-in-links --><!-- no-empty-links -->
 
 
 
