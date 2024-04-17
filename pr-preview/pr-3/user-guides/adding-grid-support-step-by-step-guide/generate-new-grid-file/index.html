@@ -302,10 +302,10 @@
 <p>The Exodus file contains only information about the position of the spectral element on the sphere. For SE aware utilities such as TempestRemap, they can use the polynomial order and the reference element map to fill in necessary data such as the locations of the nodal GLL points. For non-SE aware utilities, we need additional meta data, described in the next section.  </p>
 <h2 id="generating-a-pg2-scrip-grid-file">Generating a "pg2" SCRIP Grid File</h2>
 <p>Starting in E3SMv2 the physics calculations and standard history output use a finite volume (FV) "pg2" grid. Online mapping within the component coupler between the atmosphere and surface components requires FV-to-FV type maps, and generating these maps will require a grid file for pg2 grid. These are easily generated with TempestRemap commands as follows:</p>
-<div class="highlight"><pre><span></span><code>NE=30
-GenerateCSMesh --alt --res ${NE} --file ${GRID_FILE_PATH}/ne${NE}.g
-GenerateVolumetricMesh --in ${GRID_FILE_PATH}/ne${NE}.g --out ${GRID_FILE_PATH}/ne${NE}pg2.g --np 2 --uniform
-ConvertMeshToSCRIP --in ${GRID_FILE_PATH}/ne${NE}pg2.g --out ${GRID_FILE_PATH}/ne${NE}pg2_scrip.nc
+<div class="highlight"><pre><span></span><code><span class="nv">NE</span><span class="o">=</span><span class="m">30</span>
+GenerateCSMesh<span class="w"> </span>--alt<span class="w"> </span>--res<span class="w"> </span><span class="si">${</span><span class="nv">NE</span><span class="si">}</span><span class="w"> </span>--file<span class="w"> </span><span class="si">${</span><span class="nv">GRID_FILE_PATH</span><span class="si">}</span>/ne<span class="si">${</span><span class="nv">NE</span><span class="si">}</span>.g
+GenerateVolumetricMesh<span class="w"> </span>--in<span class="w"> </span><span class="si">${</span><span class="nv">GRID_FILE_PATH</span><span class="si">}</span>/ne<span class="si">${</span><span class="nv">NE</span><span class="si">}</span>.g<span class="w"> </span>--out<span class="w"> </span><span class="si">${</span><span class="nv">GRID_FILE_PATH</span><span class="si">}</span>/ne<span class="si">${</span><span class="nv">NE</span><span class="si">}</span>pg2.g<span class="w"> </span>--np<span class="w"> </span><span class="m">2</span><span class="w"> </span>--uniform
+ConvertMeshToSCRIP<span class="w"> </span>--in<span class="w"> </span><span class="si">${</span><span class="nv">GRID_FILE_PATH</span><span class="si">}</span>/ne<span class="si">${</span><span class="nv">NE</span><span class="si">}</span>pg2.g<span class="w"> </span>--out<span class="w"> </span><span class="si">${</span><span class="nv">GRID_FILE_PATH</span><span class="si">}</span>/ne<span class="si">${</span><span class="nv">NE</span><span class="si">}</span>pg2_scrip.nc
 </code></pre></div>
 
 
