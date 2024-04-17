@@ -11,16 +11,16 @@ If you wish to add a new ocean and sea-ice mesh you will need to use the compass
 
 ## Step-by-Step Guide
 
-1. [Generate a new grid file                                  ](adding-grid-support-step-by-step-guide/generate-new-grid-file.md)
-1. [Generate mapping files                                    ](adding-grid-support-step-by-step-guide/generate-mapping-files.md)
-1. [Generate domain files                                     ](adding-grid-support-step-by-step-guide/generate-domain-files.md)
-1. [Generate a topography file                                ](adding-grid-support-step-by-step-guide/generate-topo-file.md)
-1. [Generate an initial condition for the atmosphere          ]()
-1. [Generate land surface input data (*fsurdat*)              ]()
-1. [Generate an initial condition for land (*finidat*)        ]()
-1. [Create a new dry deposition file (*depends on use case*)  ]()
-1. [Modify E3SM configuration files to support the new grid   ]()
+1. [Generate a new grid file                               ](adding-grid-support-step-by-step-guide/generate-new-grid-file.md)
+1. [Generate mapping files                                 ](adding-grid-support-step-by-step-guide/generate-mapping-files.md)
+1. [Generate domain files                                  ](adding-grid-support-step-by-step-guide/generate-domain-files.md)
+1. [Generate a topography file                             ](adding-grid-support-step-by-step-guide/generate-topo-file.md)
+1. [Generate atmospheric initial condition                 ](adding-grid-support-step-by-step-guide/generate-atm-initial-condition.md)
+1. [Generate land input data (*fsurdat*)                   ](adding-grid-support-step-by-step-guide/generate-lnd-input-data.md)
+1. [Generate land initial condition (*finidat*)            ](adding-grid-support-step-by-step-guide/generate-lnd-initial-condition.md)
+1. [Generate a dry deposition file (*depends on use case*) ](adding-grid-support-step-by-step-guide/generate-dry-deposition.md)
+1. [Add new grid configuration to E3SM                     ](adding-grid-support-step-by-step-guide/add-grid-config.md)
 
 ## Other Useful Tutorials
 
-1. [Generate a RRM Grid File with SQuadGen                    ](adding-grid-support-step-by-step-guide/generate-RRM-grid-file.md)
+1. [Generate a RRM Grid File with SQuadGen                 ](adding-grid-support-step-by-step-guide/generate-RRM-grid-file.md)
