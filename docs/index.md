@@ -22,3 +22,14 @@ be found at the links below
 - [zstash](https://e3sm-project.github.io/zstash) - For HPSS data archiving
 - [zppy](https://e3sm-project.github.io/zppy) - For postprocessing workflow
 - [e3sm-unified](https://github.com/E3SM-Project/e3sm-unified) - Conda metapackage for all tools
+
+## User guides
+
+User guides are listed in a rough chronological order to follow here:
+- [Prior to Production](guide-prior-to-production.md) -- how to get everything set up to run a production simulation
+- [Production](guide-production.md) -- how to run a production simulation
+- [Post-Processing](guide-post-processing.md) -- how to post-process a simulation
+- [Documenting](guide-documenting.md) -- how to document a simulation
+- [Long-Term Archiving](guide-long-term-archiving.md) -- how to long-term archive a simulation
+- [Publishing](guide-publishing.md) -- how to publish a simulation
+- [Appendix](guide-appendix.md) -- other useful tips
