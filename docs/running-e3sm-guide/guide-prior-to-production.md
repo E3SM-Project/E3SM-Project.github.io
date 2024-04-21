@@ -1,4 +1,4 @@
-# Guide -- Prior to Production
+# Prior to Production
 
 This guide is intended to walk users through steps necessary to take before running a production simulation.
 

@@ -1,4 +1,4 @@
-# Guide -- Post-Processing
+# Post-Processing
 
 This guide is intended to walk users step-by-step through post-processing a simulation.
 

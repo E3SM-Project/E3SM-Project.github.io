@@ -1,4 +1,4 @@
-# Guide -- Production
+# Production
 
 This guide is intended to walk users through steps necessary to run a production simulation.
 

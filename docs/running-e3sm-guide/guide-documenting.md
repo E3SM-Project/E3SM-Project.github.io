@@ -1,4 +1,4 @@
-# Guide -- Documenting
+# Documenting
 
 You should create a Confluence page for your model run in the relevant Confluence space. Use the [Simulation Run Template](https://acme-climate.atlassian.net/wiki/spaces/EWCG/pages/2297299190) as a template. See below for how to fill out this template.
 

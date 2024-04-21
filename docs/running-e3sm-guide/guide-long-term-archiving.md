@@ -1,4 +1,4 @@
-# Guide -- Long Term Archiving
+# Long-Term Archiving
 
 Simulations that are deemed sufficiently valuable should be archived using `zstash` for long-term preservation. You can ask questions about `zstash` on the [zstash discussion board](https://github.com/E3SM-Project/zstash/discussions/categories/questions).
 
