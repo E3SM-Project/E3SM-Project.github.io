@@ -1,5 +1,5 @@
 # The Energy Exascale Earth System Model Project
-toc_min_heading_level: 3
+
 Documentation for the tools and models developed by the E3SM Project can
 be found at the links below.
 
@@ -28,4 +28,3 @@ be found at the links below.
 These guides cover how to use 2 or more of the above to accomplish a task
 
 - [Step-by-step guide to running E3SM](running-e3sm-guide/index.md).
-
