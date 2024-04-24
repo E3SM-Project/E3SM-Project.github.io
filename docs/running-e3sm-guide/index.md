@@ -1,9 +1,7 @@
 # The step-by-step guide to running E3SM
 
-The goal of this detailed guide is to walk new users conducting science runs through the template run script available in the root of the E3SM repository.
-Additionally, best and required practices are detailed from preparing for a run to documenting it and finally publishing it.
-
-## Table of Contents
+This detailed guide will walk new users conducting science runs through the template run script available in the root of the E3SM repository.
+Additionally, best and required practices for production simulations are detailed, from preparing for a run to documenting it and finally publishing it.
 
 - [Pre-Production](guide-prior-to-production.md)
 - [Production](guide-production.md)
