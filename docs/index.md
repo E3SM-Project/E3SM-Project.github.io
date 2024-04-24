@@ -1,7 +1,7 @@
 # The Energy Exascale Earth System Model Project
-
+toc_min_heading_level: 3
 Documentation for the tools and models developed by the E3SM Project can
-be found at the links below
+be found at the links below.
 
 ## Model, components and related
 
@@ -25,12 +25,7 @@ be found at the links below
 
 ## User guides
 
-User guides are listed in a rough chronological order to follow here. First is [a step-by-step guide to running E3SM](running-e3sm-guide/index.md).
+These guides cover how to use 2 or more of the above to accomplish a task
 
-- [Prior to Production](running-e3sm-guide/guide-prior-to-production.md) -- how to get everything set up to run a production simulation
-- [Production](running-e3sm-guide/guide-production.md) -- how to run a production simulation
-- [Post-Processing](running-e3sm-guide/guide-post-processing.md) -- how to post-process a simulation
-- [Documenting](running-e3sm-guide/guide-documenting.md) -- how to document a simulation
-- [Long-Term Archiving](running-e3sm-guide/guide-long-term-archiving.md) -- how to long-term archive a simulation
-- [Publishing](running-e3sm-guide/guide-publishing.md) -- how to publish a simulation
-- [Appendix](running-e3sm-guide/guide-appendix.md) -- other useful tips
+- [Step-by-step guide to running E3SM](running-e3sm-guide/index.md).
+

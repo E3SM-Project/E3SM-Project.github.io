@@ -1,16 +1,7 @@
 site_name: E3SM-Project
 
 nav:
-  - 'E3SM Docs': 'https://e3sm-project.github.io/E3SM'
-  - 'Running E3SM':
-      - 'running-e3sm-guide/index.md'
-      - 'Pre-Production': 'running-e3sm-guide/guide-prior-to-production.md'
-      - 'Production': 'running-e3sm-guide/guide-production.md'
-      - 'Post-Processing': 'running-e3sm-guide/guide-post-processing.md'
-      - 'Documentation': 'running-e3sm-guide/guide-documenting.md'
-      - 'Long-Term Archiving': 'running-e3sm-guide/guide-long-term-archiving.md'
-      - 'Publishing': 'running-e3sm-guide/guide-publishing.md'
-      - 'Appendix': 'running-e3sm-guide/guide-appendix.md'
+  - Home: 'index.md'
 
 repo_name: E3SM-Project/E3SM-Project.github.io
 repo_url: https://github.com/E3SM-Project/E3SM-Project.github.io
