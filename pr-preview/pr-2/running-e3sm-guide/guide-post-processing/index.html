@@ -416,16 +416,16 @@ ls<span class="w"> </span>&lt;e3sm_simulations_dir&gt;/&lt;case_name&gt;/archive
 <p>Load the E3SM Unified environment.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The E3SM Unified environment activation commands can be found on <a href="https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html">zppy's Getting started page</a>. Alternatively, they can be found using <a href="https://github.com/E3SM-Project/mache/tree/main/mache/machines">Mache</a>: click the relevant machine and find the <code>base_path</code> listed under <code>[e3sm_unified]</code> -- the activation command will be <code>source &lt;base_path&gt;/load_latest_e3sm_unified_&lt;machine_name&gt;.sh</code>.</p>
+<p>The E3SM Unified environment activation commands can be found on <a href="https://docs.e3sm.org/zppy/_build/html/main/getting_started.html">zppy's Getting started page</a>. Alternatively, they can be found using <a href="https://github.com/E3SM-Project/mache/tree/main/mache/machines">Mache</a>: click the relevant machine and find the <code>base_path</code> listed under <code>[e3sm_unified]</code> -- the activation command will be <code>source &lt;base_path&gt;/load_latest_e3sm_unified_&lt;machine_name&gt;.sh</code>.</p>
 </div>
-<p>If you need a feature in <code>zppy</code> that has not yet been included in the E3SM Unified environment, you can construct a <a href="https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html#b-development-environment">development environment</a>.</p>
+<p>If you need a feature in <code>zppy</code> that has not yet been included in the E3SM Unified environment, you can construct a <a href="https://docs.e3sm.org/zppy/_build/html/main/getting_started.html#b-development-environment">development environment</a>.</p>
 <h3 id="configuration-file">Configuration File</h3>
 <p>In <code>&lt;run_scripts_dir&gt;</code>, create a new post-processing configuration file, or copy an existing one, and call it <code>post.&lt;case_name&gt;.cfg</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Good example configuration files can be found in the <code>zppy</code> <a href="https://github.com/E3SM-Project/zppy/tree/main/tests/integration/generated">integration test directory</a> -- `test_complete_run_<machine_name>.cfg</p>
+<p>Good example configuration files can be found in the <code>zppy</code> <a href="https://github.com/E3SM-Project/zppy/tree/main/tests/integration/generated">integration test directory</a> -- <code>test_complete_run_&lt;machine_name&gt;.cfg</code></p>
 </div>
-<p>Edit the file and customize as needed. The file is structured with <code>[section]</code> and <code>[[sub-sections]]</code>. There is a <code>[default]</code> section, followed by additional sections for each available zppy task (<code>climo</code>, <code>ts</code>, <code>e3sm_diags</code>, <code>mpas_analysis</code>, …). Sub-sections can be used to have multiple instances of a particular task, for example having both regridded monthly and globally averaged time series files. Refer to the <code>zppy</code> <a href="https://e3sm-project.github.io/zppy/_build/html/main/schematics.html">schematics documentation</a> for more details.</p>
+<p>Edit the file and customize as needed. The file is structured with <code>[section]</code> and <code>[[sub-sections]]</code>. There is a <code>[default]</code> section, followed by additional sections for each available zppy task (<code>climo</code>, <code>ts</code>, <code>e3sm_diags</code>, <code>mpas_analysis</code>, …). Sub-sections can be used to have multiple instances of a particular task, for example having both regridded monthly and globally averaged time series files. Refer to the <code>zppy</code> <a href="https://docs.e3sm.org/zppy/_build/html/main/schematics.html">schematics documentation</a> for more details.</p>
 <p>The key sections of the configuration file are:</p>
 <p><code>[default]</code></p>
 <ul>
@@ -465,7 +465,7 @@ climatology plots averaged over years 21-50, ENSO plots for years 11 to 50, and 
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>See the <code>zppy</code> <a href="https://e3sm-project.github.io/zppy/_build/html/main/parameters.html">parameters documentation</a> for more information on parameters.</p>
+<p>See the <code>zppy</code> <a href="https://docs.e3sm.org/zppy/_build/html/main/parameters.html">parameters documentation</a> for more information on parameters.</p>
 </div>
 <h3 id="launch-zppy">Launch zppy</h3>
 <p>Run <code>zppy -c post.&lt;case_name&gt;.cfg</code>. This will submit a number of jobs. Run <code>sq</code> to see what jobs are running.</p>
@@ -510,7 +510,7 @@ grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;OK&
 <p>The post-processing output is organized hierarchically. Examples:</p>
 <ul>
 <li><code>&lt;e3sm_simulations_dir&gt;/&lt;case_name&gt;/post/atm/180x360_aave/ts/monthly/10yr</code> has the time series files – one variable per file, in 10 year periods as defined in <code>&lt;run_scripts_dir&gt;/post.&lt;case_name&gt;.cfg</code>.  </li>
-<li><code>&lt;e3sm_simulations_dir&gt;/&lt;case_name&gt;/post/atm/180x360_aave/clim/20yr</code> similarly has climatology files for 20 year periods, as defined in `<run_scripts_dir>/post.<case_name>.cfg``.</li>
+<li><code>&lt;e3sm_simulations_dir&gt;/&lt;case_name&gt;/post/atm/180x360_aave/clim/20yr</code> similarly has climatology files for 20 year periods, as defined in <code>&lt;run_scripts_dir&gt;/post.&lt;case_name&gt;.cfg</code>.</li>
 <li><code>&lt;e3sm_simulations_dir&gt;/&lt;case_name&gt;/post/atm/glb/ts/monthly/10yr</code> has globally averaged files for 10 years periods as defined in <code>&lt;run_scripts_dir&gt;/post.&lt;case_name&gt;.cfg</code>.</li>
 </ul>
 

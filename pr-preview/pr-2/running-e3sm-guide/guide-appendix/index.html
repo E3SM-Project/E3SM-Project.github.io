@@ -324,9 +324,9 @@
 </ul>
 <p>Note that the specific file name may differ amongst machines. For example, it might be named <code>~/.bashrc.ext</code>.</p>
 <h3 id="batch-jobs">Batch Jobs</h3>
-<p>To check on all batch jobs:</p>
+<p>To check on all batch jobs, with the Slurm scheduler:</p>
 <p><code>alias sqa='squeue -o "%8u %.7a %.4D %.9P %7i %.2t %.10r %.10M %.10l %.8Q %j" --sort=P,-t,-p'</code></p>
-<p>To check on your batch jobs:</p>
+<p>To check on your batch jobs, with the Slurm scheduler:</p>
 <p><code>alias sq='sqa -u $USER'</code></p>
 <p>The output of <code>sq</code> uses several abbreviations: ST = Status, R = running, PD = pending, CG = completing.</p>
 <h3 id="directories">Directories</h3>

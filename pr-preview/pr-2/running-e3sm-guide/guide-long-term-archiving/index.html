@@ -336,10 +336,6 @@
 
 <h1 id="long-term-archiving">Long-Term Archiving</h1>
 <p>Simulations that are deemed sufficiently valuable should be archived using <code>zstash</code> for long-term preservation. You can ask questions about <code>zstash</code> on the <a href="https://github.com/E3SM-Project/zstash/discussions/categories/questions">zstash discussion board</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Compy, Anvil and Chrysalis do not have local HPSS. We rely on NERSC HPSS for long-term archiving. If you are archiving a simulation run on Compy or LCRC (Chrysalis/Anvil), do all of the following steps. If you are archiving a simulation run on NERSC (Perlmutter), skip to step 4.</p>
-</div>
 <h2 id="1-clean-up-directory">1. Clean up directory</h2>
 <p>Log into the machine that you ran the simulation on. Remove all <code>eam.i</code> files except the latest one. Dates are of the form <code>&lt;YYYY-MM-DD&gt;</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;simulations_dir&gt;/&lt;case_name&gt;/run
@@ -371,10 +367,14 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<spa
 <span class="w">    </span><span class="nb">time</span><span class="w"> </span>zstash<span class="w"> </span>create<span class="w"> </span>-v<span class="w"> </span>--hpss<span class="o">=</span>globus://nersc/home/&lt;first<span class="w"> </span>letter&gt;/&lt;username&gt;/E3SMv2/<span class="si">${</span><span class="nv">EXP</span><span class="si">}</span><span class="w"> </span>--maxsize<span class="w"> </span><span class="m">128</span><span class="w"> </span>.<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>zstash/zstash_create_<span class="si">${</span><span class="nv">stamp</span><span class="si">}</span>.log
 <span class="k">done</span>
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Compy, Anvil and Chrysalis do not have local HPSS. We rely on NERSC HPSS for long-term archiving. If you are archiving a simulation run on Compy or LCRC (Chrysalis/Anvil), we need to include the Globus piece above. If you are archiving a simulation run on NERSC (Perlmutter), you can simplify that piece to <code>--hpss=E3SMv2/${EXP}</code></p>
+</div>
 <p>Load the E3SM Unified environment.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The E3SM Unified environment activation commands can be found on <a href="https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html">zppy's Getting started page</a>. Alternatively, they can be found using <a href="https://github.com/E3SM-Project/mache/tree/main/mache/machines">Mache</a>: click the relevant machine and find the <code>base_path</code> listed under <code>[e3sm_unified]</code> -- the activation command will be <code>source &lt;base_path&gt;/load_latest_e3sm_unified_&lt;machine_name&gt;.sh</code>.</p>
+<p>The E3SM Unified environment activation commands can be found on <a href="https://docs.e3sm.org/zppy/_build/html/main/getting_started.html">zppy's Getting started page</a>. Alternatively, they can be found using <a href="https://github.com/E3SM-Project/mache/tree/main/mache/machines">Mache</a>: click the relevant machine and find the <code>base_path</code> listed under <code>[e3sm_unified]</code> -- the activation command will be <code>source &lt;base_path&gt;/load_latest_e3sm_unified_&lt;machine_name&gt;.sh</code>.</p>
 </div>
 <p>Then, do the following:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>screen<span class="w"> </span><span class="c1"># Enter screen</span>
@@ -491,7 +491,7 @@ $<span class="w"> </span>ls<span class="w"> </span>/home/&lt;first<span class="w
 <span class="c1"># tar files, `index.db`, `zstash_create` log, and `zstash_check` log should be present</span>
 $<span class="w"> </span><span class="nb">exit</span>
 </code></pre></div>
-<p>Update the simulation Confluence page with information regarding this simulation (For Water Cycle’s v2 work, that page is <a href="https://acme-climate.atlassian.net/wiki/spaces/ED/pages/2766340117">V2 Simulation Planning</a>). In the <code>zstash archive</code> column, specify:</p>
+<p>If you are E3SM staff, update the simulation Confluence page with information regarding this simulation (For Water Cycle’s v2 work, that page is <a href="https://acme-climate.atlassian.net/wiki/spaces/ED/pages/2766340117">V2 Simulation Planning</a>). In the <code>zstash archive</code> column, specify:</p>
 <ul>
 <li><code>/home/&lt;first letter&gt;/&lt;username&gt;/E3SMv2/&lt;case_name&gt;</code></li>
 <li><code>zstash_create_&lt;stamp&gt;.log</code></li>
@@ -522,7 +522,7 @@ $<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>zs
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>&lt;simulations_dir&gt;
 </code></pre></div>
 <h2 id="more-info">More info</h2>
-<p>Refer to <a href="https://e3sm-project.github.io/zstash/_build/html/master/best_practices.html">zstash's best practices for E3SM</a> for details.</p>
+<p>Refer to <a href="https://docs.e3sm.org/zstash/_build/html/master/best_practices.html">zstash's best practices for E3SM</a> for details.</p>
 
 
 
