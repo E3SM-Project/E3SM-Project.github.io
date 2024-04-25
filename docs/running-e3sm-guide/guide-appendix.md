@@ -14,11 +14,11 @@ Note that the specific file name may differ amongst machines. For example, it mi
 
 ### Batch Jobs
 
-To check on all batch jobs:
+To check on all batch jobs, with the Slurm scheduler:
 
 `alias sqa='squeue -o "%8u %.7a %.4D %.9P %7i %.2t %.10r %.10M %.10l %.8Q %j" --sort=P,-t,-p'`
 
-To check on your batch jobs:
+To check on your batch jobs, with the Slurm scheduler:
 
 `alias sq='sqa -u $USER'`
 

@@ -2,9 +2,6 @@
 
 Simulations that are deemed sufficiently valuable should be archived using `zstash` for long-term preservation. You can ask questions about `zstash` on the [zstash discussion board](https://github.com/E3SM-Project/zstash/discussions/categories/questions).
 
-!!! warning
-    Compy, Anvil and Chrysalis do not have local HPSS. We rely on NERSC HPSS for long-term archiving. If you are archiving a simulation run on Compy or LCRC (Chrysalis/Anvil), do all of the following steps. If you are archiving a simulation run on NERSC (Perlmutter), skip to step 4.
-
 ## 1. Clean up directory
 
 Log into the machine that you ran the simulation on. Remove all `eam.i` files except the latest one. Dates are of the form `<YYYY-MM-DD>`.
@@ -46,9 +43,12 @@ do
 done
 ```
 
+!!! tip
+    Compy, Anvil and Chrysalis do not have local HPSS. We rely on NERSC HPSS for long-term archiving. If you are archiving a simulation run on Compy or LCRC (Chrysalis/Anvil), we need to include the Globus piece above. If you are archiving a simulation run on NERSC (Perlmutter), you can simplify that piece to `--hpss=E3SMv2/${EXP}`
+
 Load the E3SM Unified environment.
 !!! tip
-    The E3SM Unified environment activation commands can be found on [zppy's Getting started page](https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html). Alternatively, they can be found using [Mache](https://github.com/E3SM-Project/mache/tree/main/mache/machines): click the relevant machine and find the `base_path` listed under `[e3sm_unified]` -- the activation command will be `source <base_path>/load_latest_e3sm_unified_<machine_name>.sh`.
+    The E3SM Unified environment activation commands can be found on [zppy's Getting started page](https://docs.e3sm.org/zppy/_build/html/main/getting_started.html). Alternatively, they can be found using [Mache](https://github.com/E3SM-Project/mache/tree/main/mache/machines): click the relevant machine and find the `base_path` listed under `[e3sm_unified]` -- the activation command will be `source <base_path>/load_latest_e3sm_unified_<machine_name>.sh`.
 
 Then, do the following:
 
@@ -186,7 +186,7 @@ $ ls /home/<first letter>/<username>/E3SMv2/<case_name>
 $ exit
 ```
 
-Update the simulation Confluence page with information regarding this simulation (For Water Cycle’s v2 work, that page is [V2 Simulation Planning](https://acme-climate.atlassian.net/wiki/spaces/ED/pages/2766340117)). In the `zstash archive` column, specify:
+If you are E3SM staff, update the simulation Confluence page with information regarding this simulation (For Water Cycle’s v2 work, that page is [V2 Simulation Planning](https://acme-climate.atlassian.net/wiki/spaces/ED/pages/2766340117)). In the `zstash archive` column, specify:
 
 - `/home/<first letter>/<username>/E3SMv2/<case_name>`
 - `zstash_create_<stamp>.log`
@@ -225,4 +225,4 @@ $ cd <simulations_dir>
 
 ## More info
 
-Refer to [zstash's best practices for E3SM](https://e3sm-project.github.io/zstash/_build/html/master/best_practices.html) for details.
+Refer to [zstash's best practices for E3SM](https://docs.e3sm.org/zstash/_build/html/master/best_practices.html) for details.

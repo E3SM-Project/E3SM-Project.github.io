@@ -44,18 +44,18 @@ You can ask questions about `zppy` on the [zppy discussion board](https://github
 Load the E3SM Unified environment.
 
 !!! tip
-    The E3SM Unified environment activation commands can be found on [zppy's Getting started page](https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html). Alternatively, they can be found using [Mache](https://github.com/E3SM-Project/mache/tree/main/mache/machines): click the relevant machine and find the `base_path` listed under `[e3sm_unified]` -- the activation command will be `source <base_path>/load_latest_e3sm_unified_<machine_name>.sh`.
+    The E3SM Unified environment activation commands can be found on [zppy's Getting started page](https://docs.e3sm.org/zppy/_build/html/main/getting_started.html). Alternatively, they can be found using [Mache](https://github.com/E3SM-Project/mache/tree/main/mache/machines): click the relevant machine and find the `base_path` listed under `[e3sm_unified]` -- the activation command will be `source <base_path>/load_latest_e3sm_unified_<machine_name>.sh`.
 
-If you need a feature in `zppy` that has not yet been included in the E3SM Unified environment, you can construct a [development environment](https://e3sm-project.github.io/zppy/_build/html/main/getting_started.html#b-development-environment).
+If you need a feature in `zppy` that has not yet been included in the E3SM Unified environment, you can construct a [development environment](https://docs.e3sm.org/zppy/_build/html/main/getting_started.html#b-development-environment).
 
 ### Configuration File
 
 In `<run_scripts_dir>`, create a new post-processing configuration file, or copy an existing one, and call it `post.<case_name>.cfg`.
 
 !!! tip
-    Good example configuration files can be found in the `zppy` [integration test directory](https://github.com/E3SM-Project/zppy/tree/main/tests/integration/generated) -- `test_complete_run_<machine_name>.cfg
+    Good example configuration files can be found in the `zppy` [integration test directory](https://github.com/E3SM-Project/zppy/tree/main/tests/integration/generated) -- `test_complete_run_<machine_name>.cfg`
 
-Edit the file and customize as needed. The file is structured with `[section]` and `[[sub-sections]]`. There is a `[default]` section, followed by additional sections for each available zppy task (`climo`, `ts`, `e3sm_diags`, `mpas_analysis`, …). Sub-sections can be used to have multiple instances of a particular task, for example having both regridded monthly and globally averaged time series files. Refer to the `zppy` [schematics documentation](https://e3sm-project.github.io/zppy/_build/html/main/schematics.html) for more details.
+Edit the file and customize as needed. The file is structured with `[section]` and `[[sub-sections]]`. There is a `[default]` section, followed by additional sections for each available zppy task (`climo`, `ts`, `e3sm_diags`, `mpas_analysis`, …). Sub-sections can be used to have multiple instances of a particular task, for example having both regridded monthly and globally averaged time series files. Refer to the `zppy` [schematics documentation](https://docs.e3sm.org/zppy/_build/html/main/schematics.html) for more details.
 
 The key sections of the configuration file are:
 
@@ -99,7 +99,7 @@ climatology plots averaged over years 21-50, ENSO plots for years 11 to 50, and 
 - `climo_years` and `ts_years` should match their equivalents in the `[mpas_analysis]` section.
 
 !!! tip
-    See the `zppy` [parameters documentation](https://e3sm-project.github.io/zppy/_build/html/main/parameters.html) for more information on parameters.
+    See the `zppy` [parameters documentation](https://docs.e3sm.org/zppy/_build/html/main/parameters.html) for more information on parameters.
 
 ### Launch zppy
 
@@ -137,5 +137,5 @@ There is also a corresponding output file. It will have the same name but end wi
 The post-processing output is organized hierarchically. Examples:
 
 - `<e3sm_simulations_dir>/<case_name>/post/atm/180x360_aave/ts/monthly/10yr` has the time series files – one variable per file, in 10 year periods as defined in `<run_scripts_dir>/post.<case_name>.cfg`.  
-- `<e3sm_simulations_dir>/<case_name>/post/atm/180x360_aave/clim/20yr` similarly has climatology files for 20 year periods, as defined in `<run_scripts_dir>/post.<case_name>.cfg``.
+- `<e3sm_simulations_dir>/<case_name>/post/atm/180x360_aave/clim/20yr` similarly has climatology files for 20 year periods, as defined in `<run_scripts_dir>/post.<case_name>.cfg`.
 - `<e3sm_simulations_dir>/<case_name>/post/atm/glb/ts/monthly/10yr` has globally averaged files for 10 years periods as defined in `<run_scripts_dir>/post.<case_name>.cfg`.

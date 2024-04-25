@@ -1,5 +1,8 @@
 # Documenting
 
+!!! warning
+    This section only applies to E3SM staff only.
+
 You should create a Confluence page for your model run in the relevant Confluence space. Use the [Simulation Run Template](https://acme-climate.atlassian.net/wiki/spaces/EWCG/pages/2297299190) as a template. See below for how to fill out this template.
 
 <!-- TODO: where should the Confluence pages be made for v3 (and for each group)? -->
@@ -69,25 +72,25 @@ In the “Notes” section of the table, mention if a job failed or if you chang
 ## Global Time Series
 
 !!! note
-    The plots will be available online at the URL corresponding to `<www>/global_time_series/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
+    The plots will be available online at the URL corresponding to `<www>/global_time_series/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://docs.e3sm.org/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
 
 You can download the images and then upload them to your Confluence page.
 
 ## E3SM Diags
 
 !!! note
-    The plots will be available online at the URL corresponding to `<www>/e3sm_diags/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
+    The plots will be available online at the URL corresponding to `<www>/e3sm_diags/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://docs.e3sm.org/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
 
 Replace the baseline diagnostics in the template's table with relevant ones (e.g., diags on v3 `piControl` and another relevant `v3` run). Add your own diagnostics links in the last columns, labeling them as `<start_year>-<end_year>`.
 
 ## MPAS Analysis
 
 !!! note
-    The plots will be available online at the URL corresponding to `<www>/mpas_analysis/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
+    The plots will be available online at the URL corresponding to `<www>/mpas_analysis/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://docs.e3sm.org/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
 
 Make a bulleted list of links, e.g., for `<url_path>/ts_0001-0050_climo_0021-0050/`, create a bullet `"1-50 (time series), 21-50 (climatology)"`.
 
 ## ILAMB
 
 !!! note
-    The plots will be available online at the URL corresponding to `<www>/ilamb/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://e3sm-project.github.io/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
+    The plots will be available online at the URL corresponding to `<www>/ilamb/` (where `www` is specified in the `zppy` cfg). See the [E3SM Diags quick guide](https://docs.e3sm.org/e3sm_diags/_build/html/master/quickguides/quick-guide-general.html) to find the URLs for the web portals on each E3SM machine (listed as `<web_address>`).
