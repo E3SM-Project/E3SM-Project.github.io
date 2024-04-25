@@ -5,7 +5,7 @@ be found at the links below.
 
 ## Model, components and related
 
-- [E3SM](https://e3sm-project.github.io/E3SM/)
+- [E3SM](https://e3sm-project.github.io/E3SM/) - Model and Components
 - [SCMlib](https://github.com/E3SM-Project/scmlib/wiki/E3SM-Intensive-Observation-Period-Case-Library) - Single Column Model Case Library
 - [DataDocs](https://e3sm-project.github.io/e3sm_data_docs/_build/html/index.html) - Output from major E3SM simulations
 - [HICCUP](https://github.com/E3SM-Project/HICCUP) - Initial conditions from Reanalysis
@@ -22,6 +22,7 @@ be found at the links below.
 - [zstash](https://e3sm-project.github.io/zstash) - For HPSS data archiving
 - [zppy](https://e3sm-project.github.io/zppy) - For postprocessing workflow
 - [e3sm-unified](https://github.com/E3SM-Project/e3sm-unified) - Conda metapackage for all tools
+- [COMPASS](https://mpas-dev.github.io/compass/latest/index.html) - Ocean testing and mesh creation
 
 ## User guides
 
