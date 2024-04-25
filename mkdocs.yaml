@@ -1,7 +1,11 @@
 site_name: E3SM-Project
 
 nav:
-  - 'E3SM Docs': 'https://e3sm-project.github.io/E3SM'
+  - Home: 'index.md'
+  - 'e3sm.org' : 'https://e3sm.org/'
+
+repo_name: E3SM-Project/E3SM-Project.github.io
+repo_url: https://github.com/E3SM-Project/E3SM-Project.github.io
 
 theme:
   name: material
@@ -17,11 +21,21 @@ theme:
       icon: material/weather-night
       name: Switch to light mode
   features:
-    - navigation.indices
+    - navigation.indexes
     - navigation.instant
+    - navigation.instant.prefetch
     - navigation.sections
+    - navigation.path
+    - navigation.tracking
     - navigation.top
-#    - navigation.tabs
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.select
+    - content.code.copy
+    - content.code.annotate
+    - content.action.view
+    - content.tooltips
 
 markdown_extensions:
   - footnotes
@@ -32,6 +46,9 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - md_in_html
+  - admonition
+  - pymdownx.details
+  - attr_list
 
 extra_javascript:
   - javascript/mathjax.js
