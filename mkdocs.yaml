@@ -2,6 +2,7 @@ site_name: E3SM-Project
 
 nav:
   - Home: 'index.md'
+  - 'e3sm.org' : 'https://e3sm.org/'
 
 repo_name: E3SM-Project/E3SM-Project.github.io
 repo_url: https://github.com/E3SM-Project/E3SM-Project.github.io
@@ -33,7 +34,6 @@ theme:
     - content.code.select
     - content.code.copy
     - content.code.annotate
-    - content.action.edit
     - content.action.view
     - content.tooltips
 
