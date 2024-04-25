@@ -52,7 +52,7 @@ The script will automatically submit the first job. New jobs will be automatical
 
 Run `tail -f run/<component>.log.<latest log file>` to keep up with a log in real time.
 
-You can use the `sq` alias defined in [Useful Aliases](guide-appendix.md) to check on the status of the job. The `NODE` in the output indicates the number of nodes used and is dependent on the `processor_config` / `PELAYOUT` size.  
+You can use the `sq` alias defined in [Useful Aliases](guide-appendix.md#useful-aliases) to check on the status of the job. The `NODE` in the output indicates the number of nodes used and is dependent on the `processor_config` / `PELAYOUT` size.  
 
 !!! note
     When running on two different machines (such as Compy and Chrysalis) and/or two different compilers, the answers will not be the same, bit-for-bit. It is not possible using floating point operations to get bit-or-bit identical results across machines/compilers.
