@@ -186,7 +186,7 @@ $ ls /home/<first letter>/<username>/E3SMv2/<case_name>
 $ exit
 ```
 
-If you are E3SM staff, update the simulation Confluence page with information regarding this simulation (For Water Cycle’s v2 work, that page is [V2 Simulation Planning](https://acme-climate.atlassian.net/wiki/spaces/ED/pages/2766340117)). In the `zstash archive` column, specify:
+If you are E3SM staff, update the (internal) simulation Confluence page with information regarding this simulation (For v3 work, that page is [V3 Simulation Planning](https://acme-climate.atlassian.net/wiki/spaces/ED/pages/4282679297/V3+Simulation+Planning)). In the `zstash archive` column, specify:
 
 - `/home/<first letter>/<username>/E3SMv2/<case_name>`
 - `zstash_create_<stamp>.log`
