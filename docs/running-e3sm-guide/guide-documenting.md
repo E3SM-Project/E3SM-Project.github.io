@@ -3,7 +3,7 @@
 !!! warning
     This section only applies to E3SM staff only.
 
-You should create a Confluence page for your model run in the relevant Confluence space. Use the [Simulation Run Template](https://acme-climate.atlassian.net/wiki/spaces/EWCG/pages/2297299190) as a template. See below for how to fill out this template.
+You should create a Confluence page for your model run in the relevant Confluence space. Use the [Simulation Run Template](https://acme-climate.atlassian.net/wiki/spaces/DOC/pages/4298211329/Example+Simulation+Run+Template+Water+Cycle+v2) as a template. See below for how to fill out this template.
 
 <!-- TODO: where should the Confluence pages be made for v3 (and for each group)? -->
 
