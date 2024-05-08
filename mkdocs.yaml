@@ -2,7 +2,25 @@ site_name: E3SM-Project
 
 nav:
   - Home: 'index.md'
-  - 'e3sm.org' : 'https://e3sm.org/'
+  - Models and Components:
+    - 'E3SM' : 'https://docs.e3sm.org/E3SM'
+    - 'SCMlib' : 'https://github.com/E3SM-Project/scmlib/wiki/E3SM-Intensive-Observation-Period-Case-Library'
+    - 'DataDocs' : 'https://docs.e3sm.org/e3sm_data_docs/_build/html/index.html'
+    - 'HICCUP' : 'https://github.com/E3SM-Project/HICCUP'
+  - Analysis Tools:
+    - 'E3SM_diags': 'https://e3sm-project.github.io/e3sm_diags'
+    - 'MPAS-Analysis' : 'https://mpas-dev.github.io/MPAS-Analysis/stable/index.html'
+    - 'ChemDiag' : 'https://github.com/E3SM-Project/ChemDyg'
+  - Other Tools:
+    - 'zstash': 'https://docs.e3sm.org/zstash'
+    - 'zppy': 'https://docs.e3sm.org/zppy'
+    - 'e3sm-unified': 'https://github.com/E3SM-Project/e3sm-unified'
+    - 'COMPASS' : 'https://mpas-dev.github.io/compass/latest/index.html'
+    - 'EVV4ESM' : 'https://livvkit.github.io/evv4esm'
+  - User Guides:
+    - 'E3SM Step-by-Step': 'https://docs.e3sm.org/running-e3sm-guide/'
+  - More Information:
+    - 'e3sm.org' : 'https://e3sm.org/'
 
 repo_name: E3SM-Project/E3SM-Project.github.io
 repo_url: https://github.com/E3SM-Project/E3SM-Project.github.io
