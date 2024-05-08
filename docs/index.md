@@ -26,10 +26,10 @@ be found at the links below.
 - [zppy](https://e3sm-project.github.io/zppy) - For postprocessing workflow
 - [e3sm-unified](https://github.com/E3SM-Project/e3sm-unified) - Conda metapackage for all tools
 - [COMPASS](https://mpas-dev.github.io/compass/latest/index.html) - Ocean testing and mesh creation
-- [EVV4ESM](https://livvkit.github.io/evv4esm/validation/mvk_bit-for-bit.html) - Tests for non-BFB climate sameness.
+- [EVV4ESM](https://livvkit.github.io/evv4esm) - Tests for non-BFB climate sameness.
 
 ## User guides
 
-These guides cover how to use 2 or more of the above to accomplish a task
+Comprehensive guides for using E3SM and other tools
 
 - [Step-by-step guide to running E3SM](running-e3sm-guide/index.md).
