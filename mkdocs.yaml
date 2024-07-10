@@ -24,6 +24,7 @@ nav:
 
 repo_name: E3SM-Project/E3SM-Project.github.io
 repo_url: https://github.com/E3SM-Project/E3SM-Project.github.io
+edit_uri: edit/main/docs/
 
 theme:
   name: material
