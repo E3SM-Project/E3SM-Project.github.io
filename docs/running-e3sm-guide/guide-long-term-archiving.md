@@ -86,6 +86,9 @@ $ ls /home/<first letter>/<username>/E3SMv2/<case_name>
 $ exit
 ```
 
+!!! tip
+    After you run** `zstash create` *it's highly recommended that you run `zstash check`, detailed in the section below. This will allow you to check that your archival completed successfully. Do not delete any data until you've run `zstash check`.
+
 ## 3. `zstash check`
 
 On a NERSC machine (Perlmutter):
