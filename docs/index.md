@@ -27,6 +27,7 @@ be found at the links below.
 - [e3sm-unified](https://github.com/E3SM-Project/e3sm-unified) - Conda metapackage for all tools
 - [COMPASS](https://mpas-dev.github.io/compass/latest/index.html) - Ocean testing and mesh creation
 - [EVV4ESM](https://livvkit.github.io/evv4esm) - Tests for non-BFB climate sameness.
+- [SCORPIO](https://e3sm-project.github.io/scorpio) - The SCORPIO I/O library.
 
 ## User guides
 

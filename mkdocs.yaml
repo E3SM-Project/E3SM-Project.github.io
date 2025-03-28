@@ -17,6 +17,7 @@ nav:
     - 'e3sm-unified': 'https://github.com/E3SM-Project/e3sm-unified'
     - 'COMPASS' : 'https://mpas-dev.github.io/compass/latest/index.html'
     - 'EVV4ESM' : 'https://livvkit.github.io/evv4esm'
+    - 'SCORPIO' : 'https://docs.e3sm.org/scorpio'
   - User Guides:
     - 'E3SM Step-by-Step': 'https://docs.e3sm.org/running-e3sm-guide/'
   - More Information:
