@@ -17,7 +17,7 @@ be found at the links below.
 ## Analysis tools
 
 - [E3SM_diags](https://e3sm-project.github.io/e3sm_diags) -  Atmosphere and Land
-- [MPAS-Analysis](https://mpas-dev.github.io/MPAS-Analysis/stable/index.html) - Ocean and Sea Ice
+- [MPAS-Analysis](https://mpas-dev.github.io/MPAS-Analysis/main/index.html) - Ocean and Sea Ice
 - [ChemDiag](https://github.com/E3SM-Project/ChemDyg) - Atmospheric chemistry diagnostics
 
 ## Other tools
