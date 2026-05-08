@@ -81,6 +81,7 @@ extra:
     property: G-P3Z7LHMQE3
 
 plugins:
+  - search
   - redirects:
       redirect_maps:
         'e3sm.md': 'https://e3sm-project.github.io/E3SM'
