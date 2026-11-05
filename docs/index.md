@@ -10,6 +10,7 @@ be found at the links below.
 ## Model, components and related
 
 - [E3SM](https://e3sm-project.github.io/E3SM/) - Model and Components
+- [Emulators](emulators/index.md) -- Emulators
 - [SCMlib](https://github.com/E3SM-Project/scmlib/wiki/E3SM-Intensive-Observation-Period-Case-Library) - Single Column Model Case Library
 - [DataDocs](https://e3sm-project.github.io/e3sm_data_docs/_build/html/index.html) - Output from major E3SM simulations
 - [HICCUP](https://github.com/E3SM-Project/HICCUP) - Initial conditions from Reanalysis
