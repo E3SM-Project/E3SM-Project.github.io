@@ -4,6 +4,12 @@ nav:
   - Home: 'index.md'
   - Models and Components:
     - 'E3SM' : 'https://docs.e3sm.org/E3SM'
+    - 'Emulators':
+      - 'emulators/index.md'
+      - 'ACE-climSST-EAMv2' : 'emulators/ace-climsst-eamv2.md'
+      - 'ACE2-EAMv3' : 'emulators/ace2-eamv3.md'
+      - 'SamudrACE-E3SMv3' : 'emulators/samudrace-e3smv3.md'
+      - 'STRATA' : 'emulators/strata.md'
     - 'SCMlib' : 'https://github.com/E3SM-Project/scmlib/wiki/E3SM-Intensive-Observation-Period-Case-Library'
     - 'DataDocs' : 'https://docs.e3sm.org/e3sm_data_docs/_build/html/index.html'
     - 'HICCUP' : 'https://github.com/E3SM-Project/HICCUP'
