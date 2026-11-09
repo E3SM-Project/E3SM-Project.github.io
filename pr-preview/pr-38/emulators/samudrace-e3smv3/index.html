@@ -1373,9 +1373,11 @@
 <p class="admonition-title">Warning</p>
 <p>This page was written in November 2026 and may be out of date. When in doubt, check the paper and release page.</p>
 </div>
-<p>A stochastic coupled emulator of the atmosphere, ocean, and sea ice, released by <a href="https://allenai.org/">Ai2</a>. It was trained on the E3SMv3 preindustrial control simulation. The atmosphere takes 6-hour steps and the ocean takes 5-day steps, both on a 1° grid.</p>
+<p>A stochastic coupled emulator of the atmosphere, ocean, and sea ice, released by <a href="https://allenai.org/">Ai2</a>. It was trained on the E3SMv3 preindustrial control simulation. The atmosphere takes 6-hour steps and the ocean takes 5-day steps.</p>
 <ul>
 <li><strong>Paper:</strong> <a href="https://arxiv.org/abs/2608.10277">Wu et al. 2026</a></li>
+<li><strong>Architecture:</strong> A stochastic spherical Fourier neural operator (SFNO) for the atmosphere (ACE2S), coupled to a ConvNeXt U-Net for the ocean (<a href="https://arxiv.org/abs/2412.03795">Samudra</a>)</li>
+<li><strong>Grid:</strong> 1° Gaussian grid (180×360) for both the atmosphere and the ocean</li>
 <li><strong>Release:</strong> <a href="https://huggingface.co/allenai/SamudrACE-E3SMv3">Hugging Face</a></li>
 <li><strong>Code:</strong> <a href="https://github.com/ai2cm/ace">ACE repository</a></li>
 <li><strong>Training data:</strong> <a href="https://docs.e3sm.org/e3sm_data_docs/_build/html/AITraining/simulation_data/simulation_table.html">E3SM Data Docs</a></li>

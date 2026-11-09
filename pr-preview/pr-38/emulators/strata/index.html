@@ -1371,9 +1371,11 @@
 <p class="admonition-title">Warning</p>
 <p>This page was written in November 2026 and may be out of date. When in doubt, check the paper and release page.</p>
 </div>
-<p>A kilometer-scale global atmosphere emulator of SCREAM, released by <a href="https://www.nvidia.com/">NVIDIA</a>. It was trained on 17 days of SCREAMv1 output and predicts the atmospheric state on SCREAM's native ne1024pg2 grid (about 4.9 km), with 24 levels and a 10-minute step.</p>
+<p>A kilometer-scale global atmosphere emulator of SCREAM, released by <a href="https://www.nvidia.com/">NVIDIA</a>. It was trained on 17 days of SCREAMv1 output and takes 10-minute steps with 24 vertical levels.</p>
 <ul>
 <li><strong>Paper:</strong> <a href="https://arxiv.org/abs/2606.31248">Hu et al. 2026</a></li>
+<li><strong>Architecture:</strong> A vision-transformer-style (ViT) model that works on image patches, with 3D neighborhood attention (<a href="https://github.com/SHI-Labs/NATTEN">NATTEN</a>)</li>
+<li><strong>Grid:</strong> SCREAM's native ne1024pg2 cubed-sphere grid (about 4.9 km), processed as overlapping tiles</li>
 <li><strong>Release:</strong> <a href="https://huggingface.co/nvidia/strata">Hugging Face</a></li>
 <li><strong>Code:</strong> <a href="https://github.com/NVlabs/STRATA">NVlabs/STRATA</a></li>
 <li><strong>Training data:</strong> Linked from the release page</li>
