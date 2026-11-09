@@ -3,7 +3,9 @@
 !!! warning
     These pages were written in November 2026. Emulators and their software change quickly, so details here may be out of date. When in doubt, check each emulator's paper and release page.
 
-Emulators are machine learning models trained on E3SM output. The emulators below were released by our partners at [Ai2](https://allenai.org/) and [NVIDIA](https://www.nvidia.com/), so their papers and release pages are the authoritative source. Each page here gives the essentials and points you to them. They are listed from oldest to newest.
+The emulators listed here are machine learning models trained on E3SM output. They were released by our partners at [Ai2](https://allenai.org/) and [NVIDIA](https://www.nvidia.com/), so their papers and release pages are the authoritative source. Each page here gives the essentials and points you to them. They are listed from oldest to newest.
+
+These pages cover running the emulators standalone, on their own rather than inside E3SM.
 
 | Emulator | Released | Partner | Emulates |
 | --- | --- | --- | --- |
