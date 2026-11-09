@@ -1281,7 +1281,7 @@
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;simulations_dir&gt;/&lt;case_name&gt;/tests
 <span class="k">for</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>*
 <span class="k">do</span>
-<span class="w">  </span>zgrep<span class="w"> </span>-h<span class="w"> </span><span class="s1">&#39;^ nstep, te &#39;</span><span class="w"> </span><span class="si">${</span><span class="nv">test</span><span class="si">}</span>/run/atm.log.*.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>&gt;<span class="w"> </span>atm_<span class="si">${</span><span class="nv">test</span><span class="si">}</span>.txt
+<span class="w">  </span>zgrep<span class="w"> </span>-h<span class="w"> </span><span class="s1">'^ nstep, te '</span><span class="w"> </span><span class="si">${</span><span class="nv">test</span><span class="si">}</span>/run/atm.log.*.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>&gt;<span class="w"> </span>atm_<span class="si">${</span><span class="nv">test</span><span class="si">}</span>.txt
 <span class="k">done</span>
 md5sum<span class="w"> </span>*.txt
 &lt;hash&gt;<span class="w">  </span>atm_M_1x10_ndays.txt

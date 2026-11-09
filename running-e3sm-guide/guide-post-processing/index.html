@@ -1293,9 +1293,9 @@ ls<span class="w"> </span>&lt;e3sm_simulations_dir&gt;/&lt;case_name&gt;/archive
 </ul>
 <p><code>[mpas_analysis]</code>
 Years can be specified separately for time series, climatology, and ENSO plots. The lists must have the same lengths and each entry will be mapped to a realization of <code>mpas_analysis</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">climo_years</span><span class="w"> </span><span class="o">=</span><span class="s2">&quot;21-50&quot;</span>,<span class="w"> </span><span class="s2">&quot;51-100&quot;</span>,
-<span class="nv">enso_years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;11-50&quot;</span>,<span class="w"> </span><span class="s2">&quot;11-100&quot;</span>,
-<span class="nv">ts_years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1-50&quot;</span>,<span class="w"> </span><span class="s2">&quot;1-100&quot;</span>,
+<div class="highlight"><pre><span></span><code><span class="nv">climo_years</span><span class="w"> </span><span class="o">=</span><span class="s2">"21-50"</span>,<span class="w"> </span><span class="s2">"51-100"</span>,
+<span class="nv">enso_years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"11-50"</span>,<span class="w"> </span><span class="s2">"11-100"</span>,
+<span class="nv">ts_years</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"1-50"</span>,<span class="w"> </span><span class="s2">"1-100"</span>,
 </code></pre></div>
 <p>In this particular example, MPAS Analysis will be run twice. The first realization will produce
 climatology plots averaged over years 21-50, ENSO plots for years 11 to 50, and time series plots covering years 1 to 50. The second realization will cover years 51-100 for climatologies, 11-100 for ENSO, and 1-100 for time series.</p>
@@ -1313,8 +1313,8 @@ climatology plots averaged over years 21-50, ENSO plots for years 11 to 50, and 
 <p>Most jobs run quickly, though E3SM Diags may take around an hour and MPAS Analysis may take several hours.</p>
 <p><code>zppy</code> creates a new directory <code>&lt;simulations_dir&gt;/&lt;case_name&gt;/post</code>. Each realization will have a shell script (typically <code>bash</code>). This is the actual file that has been submitted to the <code>batch</code> system. There will also be a log file <code>*.o&lt;job ID&gt;</code> as well as a <code>*.status</code> file. The status file indicates the state (WAITING, RUNNING, OK, ERROR). These files can be found in <code>&lt;simulations_dir&gt;/&lt;case_name&gt;/post/scripts</code>. Once all the jobs are complete, you can check their status.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;simulations_dir&gt;/&lt;case_name&gt;/post/scripts
-cat<span class="w"> </span>*.status<span class="w"> </span><span class="c1"># should be a list of &quot;OK&quot;</span>
-grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;OK&quot;</span><span class="w"> </span>*.status<span class="w"> </span><span class="c1"># lists files without &quot;OK&quot;</span>
+cat<span class="w"> </span>*.status<span class="w"> </span><span class="c1"># should be a list of "OK"</span>
+grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"OK"</span><span class="w"> </span>*.status<span class="w"> </span><span class="c1"># lists files without "OK"</span>
 </code></pre></div>
 <p>If you re-run <code>zppy</code>, it will check the status of tasks and will skip a task if its status is “OK”. As your simulation progresses, you can update the post-processing years in the configuration file and re-run <code>zppy</code>. Newly added task will be submitted, while previously completed ones will be skipped.</p>
 <h3 id="tasks">Tasks</h3>

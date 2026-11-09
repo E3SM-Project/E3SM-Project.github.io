@@ -1196,7 +1196,7 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<spa
 &lt;case_name&gt;<span class="w"> </span><span class="se">\</span>
 <span class="o">)</span>
 <span class="c1"># Loop over simulations</span>
-<span class="k">for</span><span class="w"> </span>EXP<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">EXPS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">for</span><span class="w"> </span>EXP<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">EXPS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">do</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="o">===</span><span class="w"> </span>Archiving<span class="w"> </span><span class="si">${</span><span class="nv">EXP</span><span class="si">}</span><span class="w"> </span><span class="o">===</span>
 <span class="w">    </span><span class="nb">cd</span><span class="w"> </span>&lt;simulations_dir&gt;/<span class="si">${</span><span class="nv">EXP</span><span class="si">}</span>
@@ -1216,11 +1216,11 @@ ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<spa
 </div>
 <p>Then, do the following:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>screen<span class="w"> </span><span class="c1"># Enter screen</span>
-$<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </span><span class="c1"># Output should say &quot;Attached&quot;</span>
+$<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </span><span class="c1"># Output should say "Attached"</span>
 $<span class="w"> </span>./batch_zstash_create.bash<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>batch_zstash_create.log
 <span class="c1"># Control A D to exit screen</span>
 <span class="c1"># DO NOT CONTROL X / CONTROL C (as for emacs). This will terminate the task running in screen!!!</span>
-$<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </span><span class="c1"># Output should say &quot;Detached&quot;</span>
+$<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </span><span class="c1"># Output should say "Detached"</span>
 $<span class="w"> </span>hostname
 <span class="c1"># If you log in on another login node, </span>
 <span class="c1"># then you will need to ssh to this one to get back to the screen session.</span>
@@ -1233,7 +1233,7 @@ $<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </spa
 $<span class="w"> </span>ls<span class="w"> </span>&lt;simulations_dir&gt;/&lt;case_name&gt;/zstash
 <span class="c1"># `index.db`, and a `zstash_create` log should be present</span>
 <span class="c1"># No tar files should be listed</span>
-<span class="c1"># If you&#39;d like to know how much space the archive or entire simulation use, run:</span>
+<span class="c1"># If you'd like to know how much space the archive or entire simulation use, run:</span>
 $<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span>&lt;simulations_dir&gt;/&lt;case_name&gt;/zstash
 $<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span>&lt;simulations_dir&gt;/&lt;case_name&gt;
 </code></pre></div>
@@ -1241,7 +1241,7 @@ $<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span>&l
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>hsi
 $<span class="w"> </span>ls<span class="w"> </span>/home/&lt;first<span class="w"> </span>letter&gt;/&lt;username&gt;/E3SMv2/&lt;case_name&gt;
 <span class="c1"># Tar files and `index.db` should be listed.</span>
-<span class="c1"># Note `| wc -l` doesn&#39;t work on hsi</span>
+<span class="c1"># Note `| wc -l` doesn't work on hsi</span>
 $<span class="w"> </span><span class="nb">exit</span>
 </code></pre></div>
 <div class="admonition tip">
@@ -1263,7 +1263,7 @@ emacs<span class="w"> </span>batch_zstash_check.bash
 &lt;case_name&gt;<span class="w"> </span><span class="se">\</span>
 <span class="o">)</span>
 <span class="c1"># Loop over simulations</span>
-<span class="k">for</span><span class="w"> </span>EXP<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">EXPS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">for</span><span class="w"> </span>EXP<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">EXPS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">do</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="o">===</span><span class="w"> </span>Checking<span class="w"> </span><span class="si">${</span><span class="nv">EXP</span><span class="si">}</span><span class="w"> </span><span class="o">===</span>
 <span class="w">    </span><span class="nb">cd</span><span class="w"> </span>/global/cfs/cdirs/e3sm/&lt;username&gt;/E3SMv2
@@ -1293,12 +1293,12 @@ zstash<span class="w"> </span>check<span class="w"> </span>--tars<span class="o"
 <p>Then, do the following:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>dtn01.nersc.gov
 $<span class="w"> </span>screen
-$<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </span><span class="c1"># Output should say &quot;Attached&quot;</span>
+$<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </span><span class="c1"># Output should say "Attached"</span>
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/global/homes/&lt;first<span class="w"> </span>letter&gt;/&lt;username&gt;
 $<span class="w"> </span>./batch_zstash_check.bash
 <span class="c1"># Control A D to exit screen</span>
 <span class="c1"># DO NOT CONTROL X / CONTROL C (as for emacs). This will terminate the task running in screen!!!</span>
-$<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </span><span class="c1"># Output should say &quot;Detached&quot;</span>
+$<span class="w"> </span>screen<span class="w"> </span>-ls<span class="w"> </span><span class="c1"># Output should say "Detached"</span>
 $<span class="w"> </span>hostname
 <span class="c1"># If you log in on another login node, </span>
 <span class="c1"># then you will need to ssh to this one to get back to the screen session.</span>
@@ -1320,14 +1320,14 @@ $<span class="w"> </span>tail<span class="w"> </span>zstash_check_&lt;stamp&gt;.
 $<span class="w"> </span>ls<span class="w"> </span>/home/&lt;first<span class="w"> </span>letter&gt;/&lt;username&gt;/E3SMv2
 <span class="c1"># Check that the simulation case is now listed in this directory</span>
 $<span class="w"> </span>ls<span class="w"> </span>/home/&lt;first<span class="w"> </span>letter&gt;/&lt;username&gt;/E3SMv2/&lt;case_name&gt;
-<span class="c1"># Should match the number of files in the other machine&#39;s `&lt;simulations_dir&gt;/&lt;case_name&gt;/zstash`</span>
+<span class="c1"># Should match the number of files in the other machine's `&lt;simulations_dir&gt;/&lt;case_name&gt;/zstash`</span>
 $<span class="w"> </span><span class="nb">exit</span>
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/global/cfs/cdirs/e3sm/&lt;username&gt;/E3SMv2/&lt;case_name&gt;/zstash
 $<span class="w"> </span>ls
 <span class="c1"># `index.db` and `zstash_check` log should be the only items listed</span>
 <span class="c1"># https://www2.cisl.ucar.edu/resources/storage-and-file-systems/hpss/managing-files-hsi</span>
 <span class="c1"># cput will not transfer a file if it exists.</span>
-$<span class="w"> </span>hsi<span class="w"> </span><span class="s2">&quot;cd /home/&lt;first letter&gt;/&lt;username&gt;/E3SMv2/&lt;case_name&gt;; cput -R &lt;zstash_check log&gt;&quot;</span>
+$<span class="w"> </span>hsi<span class="w"> </span><span class="s2">"cd /home/&lt;first letter&gt;/&lt;username&gt;/E3SMv2/&lt;case_name&gt;; cput -R &lt;zstash_check log&gt;"</span>
 $<span class="w"> </span>hsi
 $<span class="w"> </span>ls<span class="w"> </span>/home/&lt;first<span class="w"> </span>letter&gt;/&lt;username&gt;/E3SMv2/&lt;case_name&gt;
 <span class="c1"># tar files, `index.db`, `zstash_create` log, and `zstash_check` log should be present</span>

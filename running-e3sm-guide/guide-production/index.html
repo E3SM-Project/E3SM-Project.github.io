@@ -1219,7 +1219,7 @@
 <h2 id="performance-information">Performance Information</h2>
 <p>Model throughput is the number of simulated years per day (SYPD). You can find this with:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;simulations_dir&gt;/&lt;case_name&gt;/case_scripts/timing
-grep<span class="w"> </span><span class="s2">&quot;simulated_years&quot;</span><span class="w"> </span>e3sm*
+grep<span class="w"> </span><span class="s2">"simulated_years"</span><span class="w"> </span>e3sm*
 </code></pre></div>
 <p>PACE provides detailed performance information. Go to <a href="https://pace.ornl.gov/">PACE</a> and enter your username to search for your jobs. You can also simply search by providing the JobID appended to log files (<code>NNNNN.yymmdd-hhmmss</code> where <code>NNNNN</code> is the SLURM job id). Click on a job ID to see its performance details. “Experiment Details” are listed at the top of the job’s page. There is also a helpful chart detailing how many processors and how much time each component (<code>atm</code>, <code>ocn</code>, etc.) used. White areas indicate time spent idle/waiting. The area of each box is essentially the "cost = simulation time * number of processors" of the corresponding component.</p>
 

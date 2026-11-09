@@ -1222,7 +1222,7 @@ git<span class="w"> </span>log
 <h2 id="configuration">Configuration</h2>
 <p><code>Compset</code> and <code>Res</code> are specified on in the PACE “Experiment Details” section. See “Performance Information” above for how to access PACE. Choose the latest job and list these settings on your page. Custom parameters should also be listed. Find these by running:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>&lt;run_scripts_dir&gt;
-grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;EOF &gt;&gt; user_nl&quot;</span><span class="w"> </span>run.&lt;case_name&gt;.sh<span class="w"> </span><span class="c1"># Find the line numbers to look at</span>
+grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">"EOF &gt;&gt; user_nl"</span><span class="w"> </span>run.&lt;case_name&gt;.sh<span class="w"> </span><span class="c1"># Find the line numbers to look at</span>
 </code></pre></div>
 <p>Copy the code blocks after <code>cat &lt;&lt;EOF &gt;&gt; user_nl_eam</code>, <code>cat &lt;&lt; EOF &gt;&gt; user_nl_elm</code>, and <code>cat &lt;&lt; EOF &gt;&gt; user_nl_mosart</code> to your page.</p>
 <h2 id="scripts">Scripts</h2>
@@ -1238,9 +1238,9 @@ grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;EOF
 <span class="o">{</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>atm.log.*.gz<span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$f</span>
-<span class="w">        </span>zgrep<span class="w"> </span><span class="s2">&quot;DATE=&quot;</span><span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
-<span class="w">        </span>zgrep<span class="w"> </span><span class="s2">&quot;DATE=&quot;</span><span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
-<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">        </span>zgrep<span class="w"> </span><span class="s2">"DATE="</span><span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+<span class="w">        </span>zgrep<span class="w"> </span><span class="s2">"DATE="</span><span class="w"> </span><span class="nv">$f</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
 <span class="w">    </span><span class="k">done</span>
 <span class="o">}</span>
 </code></pre></div>
