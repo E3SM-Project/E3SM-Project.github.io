@@ -11,7 +11,7 @@ be found at the links below.
 
 - [E3SM](https://e3sm-project.github.io/E3SM/) - Model and Components
 - [Emulators](emulators/index.md) - Available AI emulators of E3SM and how to get started
-- [Data](https://e3sm-project.github.io/e3sm_data_docs/_build/html/index.html) - Output from major E3SM simulations
+- [Data](https://docs.e3sm.org/data/) - Output from major E3SM simulations
 - [SCMlib](https://github.com/E3SM-Project/scmlib/wiki/E3SM-Intensive-Observation-Period-Case-Library) - Single Column Model Case Library
 - [HICCUP](https://github.com/E3SM-Project/HICCUP) - Initial conditions from Reanalysis
 

@@ -11,7 +11,7 @@ nav:
       - 'SamudrACE-E3SMv3' : 'emulators/samudrace-e3smv3.md'
       - 'STRATA' : 'emulators/strata.md'
     - 'SCMlib' : 'https://github.com/E3SM-Project/scmlib/wiki/E3SM-Intensive-Observation-Period-Case-Library'
-    - 'Data' : 'https://docs.e3sm.org/e3sm_data_docs/_build/html/index.html'
+    - 'Data' : 'https://docs.e3sm.org/data/'
     - 'HICCUP' : 'https://github.com/E3SM-Project/HICCUP'
   - Analysis Tools:
     - 'E3SM_diags': 'https://e3sm-project.github.io/e3sm_diags'
@@ -91,3 +91,4 @@ plugins:
   - redirects:
       redirect_maps:
         'e3sm.md': 'https://e3sm-project.github.io/E3SM'
+        'data.md': 'https://docs.e3sm.org/e3sm_data_docs/_build/html/index.html'
